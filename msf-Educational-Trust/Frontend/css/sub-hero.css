@@ -1,0 +1,180 @@
+/* ================================
+   SUB PAGE HERO
+================================ */
+
+.sub-hero {
+  position: relative;
+  height: 50vh;
+  min-height: 280px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.sub-hero-slider {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.sub-hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 1s ease, transform 1s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sub-hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.sub-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,.6) 0%, rgba(0,0,0,.25) 55%, rgba(0,0,0,.05) 100%);
+}
+
+/* ================================
+   CONTENT
+================================ */
+
+.sub-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  animation: subFadeUp .9s ease forwards;
+}
+
+.sub-hero-content h1 {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 700;
+  line-height: 1.1;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.45);
+}
+
+/* Decorations */
+.sub-deco img {
+  height: 38px;
+  vertical-align: middle;
+  margin: 0 10px;
+  filter: brightness(0) invert(1);
+}
+
+/* ================================
+   WAVES
+================================ */
+
+.sub-hero-wave {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  margin-top: -100px;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.sub-hero-wave svg {
+  width: 200%;
+  height: 100%;
+  transform: scaleY(-1);
+  animation: subWaveFloat 9s linear infinite;
+}
+
+.wave-back svg {
+  animation-duration: 14s;
+  opacity: .6;
+  margin-top: -10px;
+}
+
+.wave-front svg {
+  animation-duration: 9s;
+}
+
+.wave-front path { fill: #ffa929; }
+.wave-back  path { fill: #ffffff; }
+
+/* ================= BREADCRUMB ================= */
+
+.sub-breadcrumb {
+  margin-top: 12px;
+  font-size: 0.9rem;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  color: rgba(255,255,255,0.8);
+}
+
+.sub-breadcrumb a {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sub-breadcrumb a:hover {
+  color: #ffa929;
+}
+
+.sub-breadcrumb span {
+  opacity: 0.6;
+}
+
+
+/* ================================
+   ANIMATIONS
+================================ */
+
+@keyframes subFadeUp {
+  from { opacity: 0; transform: translateY(22px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes subWaveFloat {
+  from { transform: translateX(0) scaleY(-1); }
+  to   { transform: translateX(-50%) scaleY(-1); }
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+
+@media (max-width: 768px) {
+  .sub-hero {
+    height: 34vh;
+    min-height: 220px;
+  }
+
+  .sub-hero-content h1 {
+    font-size: clamp(26px, 6vw, 36px);
+  }
+
+  .sub-deco img {
+    height: 26px;
+    margin: 0 6px;
+  }
+
+  .sub-hero-wave {
+    height: 90px;
+    margin-top: -80px;
+  }
+}
+
+@media (max-width: 420px) {
+  .sub-hero {
+    height: 32vh;
+    min-height: 200px;
+  }
+
+  .sub-hero-content h1 {
+    font-size: 28px;
+  }
+}

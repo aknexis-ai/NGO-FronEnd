@@ -1,0 +1,173 @@
+/* ==============================
+   OUR PATRONS & AWARDS SECTION
+================================ */
+
+.recognition-section {
+  padding: 100px 24px;
+  background: #ffffff;
+}
+
+.recognition-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+/* TITLES */
+
+.patrons-block h2,
+.awards-block h2 {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* ==============================
+   PATRONS GRID
+================================ */
+
+.patrons-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  max-height: 430px;
+  overflow-y: auto;
+}
+
+.patrons-grid::-webkit-scrollbar {
+  width: 6px;
+}
+
+.patrons-grid::-webkit-scrollbar-thumb {
+  background: #ffb703;
+  border-radius: 10px;
+}
+
+.patron-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .35s ease;
+}
+
+.patron-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 40px rgba(0,0,0,0.2);
+}
+
+.patron-card img {
+  max-width: 100%;
+  max-height: 70px;
+  object-fit: contain;
+}
+
+/* ==============================
+   AWARDS LIST
+================================ */
+
+.awards-list {
+  background: #fff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.12);
+  max-height: 430px;
+  overflow-y: auto;
+}
+
+/* Custom Scrollbar */
+
+.awards-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.awards-list::-webkit-scrollbar-thumb {
+  background: #ffb703;
+  border-radius: 10px;
+}
+
+/* Award Item */
+
+.award-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 22px;
+  align-items: center;
+  padding: 18px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.award-item:last-child {
+  border-bottom: none;
+}
+
+.award-year {
+  width: 97px;
+  min-width: 97px;
+  height: 97px;
+  background: url("https://www.salaambaalaktrust.com/assets/images/award.svg") center no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 700;
+  color: #000;
+  line-height: 1;
+}
+
+
+.award-content h4 {
+  font-size: 17px;
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.award-content p {
+  font-size: 14px;
+  color: #555;
+}
+
+
+@media (max-width: 900px) {
+  .recognition-container {
+    grid-template-columns: 1fr;
+  }
+
+  .patrons-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .awards-list {
+    max-height: none;
+  }
+  
+  .award-item{
+    gap: 4px;
+  }
+
+  .award-year{
+    width: 77px;
+    min-width: 77px;
+    height: 77px;
+  }
+
+  .award-content h4 {
+  font-size: 12px;
+}
+
+.award-content p {
+  font-size: 10px;
+  color: #555;
+}
+
+}

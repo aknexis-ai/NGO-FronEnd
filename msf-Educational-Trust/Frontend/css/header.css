@@ -1,0 +1,572 @@
+:root{
+  --menu-ease:cubic-bezier(0.4,0,0.2,1);
+  --menu-duration:0.35s;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+ul{list-style:none;}
+a{text-decoration:none;}
+
+/* ================= HEADER ================= */
+.msf-header{
+  position:sticky;
+  top:0;
+  z-index:9999;
+  padding:12px;
+}
+
+.msf-header .donate-btn {
+  width: auto;
+  margin: 0;
+  padding: 10px 18px;
+}
+
+.header-inner{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+
+  padding:14px 20px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.25);
+  box-shadow:0 10px 40px rgba(0,0,0,0.25);
+  transition:all 0.4s ease;
+}
+
+/* ================= LOGO ================= */
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+}
+
+.logo-box img{width:48px;}
+.logo-box span{
+  font-size:20px;
+  font-weight:600;
+  color:#1b2b34;
+}
+
+/* ================= DESKTOP NAV ================= */
+.nav-area{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links li{position:relative;}
+
+.nav-links > li > a{
+  font-weight:500;
+  padding:8px 0;
+  color:#1b2b34;
+  position:relative;
+}
+
+/* underline */
+.nav-links > li > a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:currentColor;
+  transition:0.35s;
+}
+
+.nav-links > li > a:hover::after{
+  width:100%;
+}
+
+.nav-links > li > a:hover{
+  color:#ffd369;
+}
+
+/* ================= DROPDOWN DESKTOP ================= */
+.dropdown-menu{
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:240px;
+
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(14px);
+  border-radius:16px;
+  padding:12px 0;
+
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(22px);
+  pointer-events:none;
+
+  transition:
+    opacity var(--menu-duration) var(--menu-ease),
+    transform var(--menu-duration) var(--menu-ease);
+}
+
+
+.dropdown-menu a{
+  display:block;
+  padding:12px 22px 16px;
+  font-weight:500;
+  color:#203a43;
+  position:relative;
+  transition: .3s;
+}
+
+.dropdown-menu a::after{
+  content:'';
+  position:absolute;
+  left:22px;
+  bottom:8px;
+  width:0;
+  height:2px;
+  background: #ff512f;
+  transition:0.35s;
+  
+}
+
+.dropdown-menu a:hover::after{
+  width:calc(100% - 44px);
+}
+
+.dropdown-menu a:hover{
+  background:rgba(0,0,0,0.04);
+  border-radius:12px;
+  color:#ff512f;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.action-buttons{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.btn{
+  padding:10px 18px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:600;
+  transition:0.35s ease;
+}
+
+.login-btn{
+  background:#fff;
+  color:#203a43;
+}
+
+.donate-btn{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  color:#fff;
+  background:linear-gradient(135deg,#ff512f,#f09819);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ================= TOGGLE ================= */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ================= MOBILE MENU ================= */
+.mobile-menu{
+  display:none;
+  margin-top:12px;
+  background:#fff;
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+
+.mobile-menu .dropdown-menu{
+  display:block;
+  position: static;
+  max-height:0;
+  overflow:hidden;
+  background:transparent;
+  box-shadow:none;
+  transition:max-height 0.35s ease;
+}
+
+.mobile-menu .nav-links > li > a{
+  padding:12px;
+  font-weight:600;
+  color:#203a43;
+}
+
+.mobile-menu.show {
+  display: block;
+}
+
+.mobile-menu .dropdown-menu{
+  position:static;
+  max-height:0;
+  overflow:hidden;
+
+  opacity:1;
+  visibility:visible;
+  transform:none;
+  pointer-events:auto;
+
+  transition:max-height 0.35s ease;
+  box-shadow:none;
+  background:transparent;
+  padding:0 0 0 12px;
+}
+
+.mobile-menu .dropdown-menu.open{
+  padding:6px 0 6px 12px;
+}
+
+
+.mobile-menu .dropdown-menu a{
+  padding:10px 12px;
+  font-weight:500;
+  color:#555;
+}
+
+.mobile-menu .dropdown-menu a:hover{
+  background:#f2f2f2;
+}
+
+.msf-header.scrolled .header-inner{
+  background:rgba(15,32,39,0.85);
+  backdrop-filter:blur(20px);
+}
+
+.msf-header.scrolled .nav-links > li > a,
+.msf-header.scrolled .logo-box span{
+  color:#0f2027;
+}
+
+.msf-header.scrolled .action-buttons a{
+  color:#0f2027;
+}
+
+.msf-header.scrolled .menu-toggle{
+  color: #f2f2f2;
+}
+
+.short-text{display:none;}
+
+@media(min-width:1025px){
+  .nav-area .dropdown:hover > .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+
+  .msf-header.scrolled .nav-links > li > a,
+  .msf-header.scrolled .logo-box span{
+    color:#ffffff;
+  }
+
+}
+
+
+@media(max-width:1024px){
+
+  .msf-header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+  }
+
+  .nav-area{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .mobile-menu .nav-links{
+    display:flex !important;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .mobile-menu a::after{
+    display:none !important;
+  }
+
+  .mobile-menu .nav-links > li > a{
+    padding:12px;
+    font-weight:600;
+    color:#203a43;
+    border-bottom:1px solid rgba(0,0,0,0.08);
+  }
+
+  .mobile-menu .dropdown-menu a{
+    padding:10px 12px;
+    font-weight:500;
+    color:#555;
+    border-bottom:1px solid rgba(0,0,0,0.06);
+  }
+
+  .mobile-menu .dropdown-menu a:last-child{
+    border-bottom: 1px solid #f096197e ;
+  }
+
+  .mobile-menu a:hover{
+    background:none;
+    color:#ff512f;
+  }
+
+  .mobile-menu a{
+  color:#203a43;
+}
+
+  .mobile-menu .dropdown-menu a:hover{
+    background:none;
+    color:#ff512f;
+    border-bottom-color:#ff512f;
+  }
+
+  .mobile-menu .dropdown > a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .mobile-menu .dropdown > a::after{
+    content:'▾';
+    font-size:14px;
+    transition:transform 0.3s ease;
+  }
+
+  .mobile-menu .dropdown-menu.open{
+    margin-bottom:6px;
+  }
+
+ .mobile-menu .dropdown > a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .mobile-menu .dropdown > a::after{
+    content:'▾';
+    transition:transform 0.3s ease;
+  }
+
+  .mobile-menu .dropdown-menu.open{
+    margin-bottom:6px;
+  }
+
+  .mobile-menu .dropdown-menu.open
+  ~ a::after{
+    transform:rotate(180deg);
+  }
+
+  .msf-header.scrolled .menu-toggle .nav-links .dropdown a{
+  color: #0f2027;
+}
+
+}
+
+@media(max-width:600px){
+  .logo-box span{display:none;}
+  .full-text{display:none;}
+  .short-text{display:inline;}
+}
+
+/******* DROPDOWN ARROW *******/
+
+.arrow{
+  display:inline-block;
+  margin-left:6px;
+  font-size:15px;
+  line-height: 1;
+  transition:transform 0.3s ease, opacity 0.3s ease;
+}
+@media(min-width:1025px){
+  .nav-area .dropdown:hover > a .arrow{
+    transform:rotate(180deg);
+    opacity:1;
+
+  }
+}
+@media(max-width:1024px){
+  .mobile-menu .dropdown-menu.open ~ a .arrow{
+    transform:rotate(180deg);
+    opacity:1;
+  }
+}
+
+/* ---------------- BUTTONS ---------------- */
+
+.btn-outline, .btn-primary{
+  font-size: 14px;
+  padding: 8px 16px;
+  border-radius: 10px;
+  transition: .3s ease;
+}
+
+.btn-outline{
+  border: 1px solid #ffb703;
+  color: #ffb703;
+  background: transparent;
+}
+
+.btn-outline:hover{
+  background: #ffb703;
+  color: #111;
+  box-shadow: 0 8px 18px rgba(255,183,3,.45);
+}
+
+.btn-primary{
+  background: linear-gradient(135deg,#ffb703,#ffd166);
+  color: #111;
+  border: none;
+  box-shadow: 0 10px 25px rgba(255,183,3,.45);
+}
+
+.btn-primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 14px 30px rgba(255,183,3,.6);
+}
+
+/****** Active Donate Btn *********/
+
+.nav-donate-btn {
+  position: relative;
+  padding: 10px 22px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #f59e0b, #fb923c);
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.nav-donate-btn {
+  animation: donatePulse 2.4s ease-in-out infinite;
+}
+
+@keyframes donatePulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(245,158,11,0.5);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(245,158,11,0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(245,158,11,0);
+  }
+}
+
+.nav-donate-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 120%;
+  height: 100%;
+  border-radius: inherit;
+   background: linear-gradient(
+    120deg,
+    rgba(245,158,11,0.9),
+    rgba(251,146,60,0.9),
+    rgba(79,70,229,0.9)
+  );
+  opacity: 0.6;
+  z-index: -1;
+   animation: donatePulse 2.6s ease-in-out infinite;
+}
+
+.donate-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -120%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.6),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: donateShine 3.5s ease-in-out infinite;
+}
+
+.donate-btn:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(245,158,11,0.45);
+}
+
+@keyframes donatePulse {
+  0% {
+    opacity: 0.35;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 0.35;
+    transform: scale(0.98);
+  }
+}
+
+@keyframes donateShine {
+  0% {
+    left: -120%;
+  }
+  60% {
+    left: 120%;
+  }
+  100% {
+    left: 120%;
+  }
+}
+
+
+.nav-donate-btn:hover {
+  transform: translateY(-2px) scale(1.04);
+  box-shadow: 0 12px 26px rgba(0,0,0,0.25);
+  animation-play-state: paused; /* stops pulse on hover */
+}
+
+.nav-donate-btn.active {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  animation: none;
+  box-shadow: 0 0 0 3px rgba(34,197,94,0.4);
+}

@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MSF | Video Gallery </title>
+
+<meta name="description" content="MSF Educational Trust is dedicated to transforming lives through education, skill development, health care, and social empowerment. Join us in creating lasting change.">
+<meta name="keywords" content="MSF Educational Trust, NGO India, Education Trust, Child Welfare, Non Profit Organization, Donate, Volunteer, Social Work, Skill Development, Community Support">
+<meta name="author" content="MSF Educational Trust">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="MSF Educational Trust | Empowering Lives Through Education">
+<meta property="og:description" content="Together we transform lives. Support education, health, and opportunity for communities in need.">
+<meta property="og:image" content="https://msf-trust.netlify.app/images/MSF-logo.png">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:site_name" content="MSF Educational Trust">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MSF Educational Trust | Empowering Lives">
+<meta name="twitter:description" content="Support education and social empowerment initiatives across communities.">
+<meta name="twitter:image" content="https://msf-trust.netlify.app/images/MSF-logo.png">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#ffb703">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-status-bar-style" content="black-translucent">
+
+<link rel="icon" href="images/MSF-logo.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/MSF-logo.png">
+
+<!--Production-Grade code-->
+<meta name="google-site-verification" content="google-site-verification=RBwOueXlnoEoQ-h30ZR7auWxHExcFoU0P1oyQdtF2_I">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/sub-hero.css">
+<link rel="stylesheet" href="css/styles-sub.css">
+<link rel="stylesheet" href="css/footer.css">
+
+<style>
+
+.video-gallery-section {
+  padding: 100px 24px;
+  background: linear-gradient(180deg, #f9fbff, #ffffff);
+}
+
+.video-gallery-section .section-title {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: 800;
+  margin-bottom: 60px;
+  color: #111;
+}
+
+.video-gallery-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 36px;
+}
+
+.video-card {
+  background: #ffffff;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+  overflow: hidden;
+  transition: transform .45s ease, box-shadow .45s ease;
+  text-align: center;
+}
+
+.video-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 70px rgba(0,0,0,0.18);
+}
+
+.video-thumbnail {
+  position: relative;
+  height: 220px;
+  overflow: hidden;
+}
+
+.video-thumbnail img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .6s ease;
+}
+
+.video-card:hover .video-thumbnail img {
+  transform: scale(1.08);
+}
+
+.video-play-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 56px;
+  color: #ffffff;
+  background: radial-gradient(
+    circle,
+    rgba(255,183,3,0.85) 0%,
+    rgba(251,86,7,0.85) 70%
+  );
+  opacity: 0;
+  transition: opacity .35s ease, transform .35s ease;
+}
+
+.video-card:hover .video-play-icon {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+.video-caption {
+  padding: 18px 16px 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.video-open-btn {
+  margin-bottom: 22px;
+  background: linear-gradient(135deg, #ffb703, #fb5607);
+  color: #ffffff;
+  border: none;
+  padding: 10px 26px;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform .3s ease, box-shadow .3s ease;
+  box-shadow: 0 10px 22px rgba(251,86,7,0.45);
+}
+
+.video-open-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(251,86,7,0.6);
+}
+
+@media (max-width: 768px) {
+  .video-gallery-section {
+    padding: 80px 16px;
+  }
+
+  .video-thumbnail {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-thumbnail {
+    height: 180px;
+  }
+
+  .video-caption {
+    font-size: 0.95rem;
+  }
+}
+
+.video-lightbox { display: none; }
+.video-lightbox.active { display: flex; }
+</style>
+
+</head>
+<body>
+  <!--Header section -->
+  <header class="msf-header">
+  <div class="header-inner">
+
+    <!-- LOGO -->
+    <div class="logo-box" onclick="location.href='index.html'">
+      <img src="images/MSF-logo.png" alt="MSF Logo">
+      <span>MSF Educational Trust</span>
+    </div>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="nav-area">
+      <ul class="nav-links">
+
+        <li class="dropdown">
+          <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="background.html">Background</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mission-vision.html">Mission & Vision</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="patrons.html">Patrons</a></li>
+            <li><a href="Annual-Reports.html">Annual Reports</a></li>
+            <li><a href="Financial-Documents.html">Financial Documents</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">What We Do<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+            <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+            <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+            <li><a href="Mental-Health.html">Mental Health</a></li>
+            <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+            <li><a href="edu-programs.html">Education & Skill Building</a></li>
+            <li><a href="Success-Stories.html">Success Stories</a></li>
+            <li><a href="Annual-Tour.html">Annual Tour</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate Online</a></li>
+            <li><a href="Volunteers-post.html">Volunteers</a></li>
+            <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+            <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Gallery<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+            <li><a href="Newsletter.html">Newsletter</a></li>
+            <li><a href="Press-Releases.html">Press Releases</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Video-Gallery.html">Video Gallery</a></li>
+          </ul>
+        </li>
+<!-- 
+        <li class="dropdown">
+          <a href="#">City Walk<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Overview</a></li>
+            <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+            <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+            <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+            <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+            <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+            <li><a href="Media-Coverage.html">Media Coverage</a></li>
+            <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+          </ul>
+        </li> -->
+
+      </ul>
+    </nav>
+
+    <!-- ACTION BUTTONS + TOGGLE -->
+    <div class="action-buttons">
+      <a href="volunteer.html" class="btn login-btn">
+        <span class="full-text">Volunteer Login</span>
+        <span class="short-text">Login</span>
+      </a>
+
+      <a href="donate.html" class="btn donate-btn">
+        <span class="rupee">₹</span>
+        <span>Donate</span>
+      </a>
+
+      <div class="menu-toggle" aria-label="Open Menu">&#9776;</div>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <nav class="mobile-menu" aria-label="Mobile Navigation">
+    <ul class="nav-links">
+
+      <li class="dropdown">
+        <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="background.html">Background</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mission-vision.html">Mission & Vision</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="patrons.html">Patrons</a></li>
+          <li><a href="Annual-Reports.html">Annual Reports</a></li>
+          <li><a href="Financial-Documents.html">Financial Documents</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">What We Do<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+          <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+          <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+          <li><a href="Mental-Health.html">Mental Health</a></li>
+          <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+          <li><a href="edu-programs.html">Education & Skill Building</a></li>
+          <li><a href="Success-Stories.html">Success Stories</a></li>
+          <li><a href="Annual-Tour.html">Annual Tour</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="donate.html">Donate Online</a></li>
+          <li><a href="Volunteers-post.html">Volunteers</a></li>
+          <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+          <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Gallery<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+          <li><a href="Newsletter.html">Newsletter</a></li>
+          <li><a href="Press-Releases.html">Press Releases</a></li>
+          <li><a href="Photo.html">Photo Gallery</a></li>
+          <li><a href="Video-Gallery.html">Video Gallery</a></li>
+        </ul>
+      </li>
+<!-- 
+      <li class="dropdown">
+        <a href="#">City Walk<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Overview</a></li>
+          <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+          <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+          <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+          <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+          <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+          <li><a href="Media-Coverage.html">Media Coverage</a></li>
+          <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+        </ul>
+      </li> -->
+
+    </ul>
+  </nav>
+
+</header>
+
+<!-- ================= SUB PAGE HERO : CONTACT ================= -->
+
+<section class="sub-hero">
+
+  <div class="sub-hero-slider">
+
+    <div class="sub-hero-slide active" style="background-image: url('images/bg_1.jpg');">
+      <div class="sub-hero-overlay"></div>
+
+      <div class="sub-hero-content">
+        <h1>
+          <div class="sub-breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="#">Video</a>
+        </div>
+
+          <span class="sub-deco"><img src="images/motive.png"></span>
+          Video Gallery
+          <span class="sub-deco"><img src="images/motive-1.png"></span>
+        </h1>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ SUB HERO WAVES ============ -->
+
+<div class="sub-hero-wave wave-back">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path
+      d="M0,60 
+         C120,100 240,20 360,50 
+         C480,80 600,30 720,50 
+         C840,70 960,40 1080,60 
+         C1200,80 1320,40 1440,50 
+         L1440,0 L0,0 Z">
+    </path>
+  </svg>
+</div>
+
+<div class="sub-hero-wave wave-front">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path
+      d="M0,60 
+         C120,100 240,20 360,50 
+         C480,80 600,30 720,50 
+         C840,70 960,40 1080,60 
+         C1200,80 1320,40 1440,50 
+         L1440,0 L0,0 Z">
+    </path>
+  </svg>
+</div>
+
+<section class="video-gallery-section">
+  <div class="container">
+
+    <!-- Section Title -->
+    <h2 class="section-title">Video Gallery</h2>
+
+    <!-- Video Grid -->
+    <div class="video-gallery-grid">
+
+      <!-- Video Card -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <img src="images/health.jpg" alt="SBT Documentary">
+          <span class="video-play-icon">▶</span>
+        </div>
+        <p class="video-caption">
+          Salaam Baalak Trust – Impact Documentary
+        </p>
+
+        <!-- Video Source (used later by JS) -->
+        <button class="video-open-btn"
+                data-video-type="youtube"
+                data-video-src="https://www.youtube.com/embed/0CbFrom3Qkk?si=MWe7LlQPf6pfQTjV">
+          Watch Video
+        </button>
+      </div>
+
+      <!-- Video Card -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <img src="images/health.jpg" alt="Children Education Program">
+          <span class="video-play-icon">▶</span>
+        </div>
+        <p class="video-caption">
+          Education & Skill Building Program
+        </p>
+
+        <button class="video-open-btn"
+                data-video-type="vimeo"
+                data-video-src="https://www.youtube.com/embed/0CbFrom3Qkk?si=MWe7LlQPf6pfQTjV">
+          Watch Video
+        </button>
+      </div>
+
+      <!-- Video Card -->
+      <div class="video-card">
+        <div class="video-thumbnail">
+          <img src="images/health.jpg" alt="Fundraising Event">
+          <span class="video-play-icon">▶</span>
+        </div>
+        <p class="video-caption">
+          Fundraising Event Highlights
+        </p>
+
+        <button class="video-open-btn"
+                data-video-type="mp4"
+                data-video-src="https://www.youtube.com/embed/0CbFrom3Qkk?si=MWe7LlQPf6pfQTjV">
+          Watch Video
+        </button>
+      </div>
+
+    </div>
+    
+
+  </div>
+</section>
+
+<div class="video-lightbox" id="videoLightbox">
+  <div class="video-lightbox-content">
+    <span class="video-lightbox-close">&times;</span>
+
+    <!-- JS will inject iframe or video here -->
+    <div class="video-container"></div>
+  </div>
+</div>
+
+<!--Footer Section -->
+<footer class="ngo-footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND + SOCIAL -->
+    <div class="footer-brand">
+      <img src="images/MSF-logo.png" class="footer-logo" alt="MSF Educational Trust">
+
+        <p>
+          <b>MSF Educational Trust</b> is dedicated to empowering underprivileged children and communities
+          through education, care, and life-building opportunities. Together, we build hope, dignity,
+          and a brighter future.
+        </p>
+
+      <div class="footer-social">
+        <a href="www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="x.com"><i class="fab fa-x-twitter"></i></a>
+        <a href="www.youtube.com/"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- WHO WE ARE -->
+    <div class="footer-col">
+      <h4>Who We Are</h4>
+      <ul>
+        <li><a href="mission-vision.html">Mission & Vision</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="Financial-Documents.html">Financial Documents</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+      </ul>
+
+      <h4 class="mt">How to Empower Us</h4>
+      <ul>
+        <li><a href="donate.html">Donate Online</a></li>
+        <li><a href="volunteer.html">Volunteers</a></li>
+        <li><a href="patrons.html">Patrons</a></li>
+        <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+      </ul>
+    </div>
+
+    <!-- WHAT WE DO -->
+    <div class="footer-col">
+      <h4>What We Do</h4>
+      <ul>
+        <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+        <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+        <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+        <li><a href="edu-programs.html">Education & Skill Building</a></li>
+        <li><a href="Performing-Arts.html">Performing Arts</a></li>
+        <li><a href="Success-Stories.html">Success Stories</a></li>
+        <li><a href="Annual-Tour.html">Annual Tour</a></li>
+      </ul>
+    </div>
+
+    <!-- CITY WALK + GALLERY -->
+    <div class="footer-col">
+      <h4>City Walk</h4>
+      <ul>
+        <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+        <li><a href="Media-Coverage.html">Media Coverage</a></li>
+        <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+        <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+        <li><a href="Exploring-Shahjahanabad.html">Exploring Walled City <!-- <span class="new-tag">NEW</span></a></li> -->
+      </ul>
+
+      <h4 class="mt">Gallery</h4>
+      <ul>
+        <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+        <li><a href="Newsletter.html">Newsletter</a></li>
+        <li><a href="Press-Releases.html">Press Release</a></li>
+        <li><a href="blogs.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT + MAP -->
+    <div class="footer-col footer-contact">
+      <h4>Contact Us</h4>
+
+      <p>
+        📍 2nd Floor, DDA Community Centre,<br>
+        Chandi Wali Gali, Paharganj,<br>
+        New Delhi - 110055
+      </p>
+
+      <p>
+        ✉ contact@msftrust.org<br>
+        tanya@msftrust.org
+      </p>
+
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps?q=Paharganj%20New%20Delhi&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DONATION STRIP -->
+  <div class="footer-donations">
+    <span>Donation Gateway Options:</span>
+    <img src="images/rupey.svg" alt="Payment Methods">
+    <img src="images/visa.svg" alt="Payment Methods">
+    <img src="images/mastercard.svg" alt="Payment Methods">
+    <img src="images/upi.svg" alt="Payment Methods">
+    <img src="images/gpay.svg" alt="Payment Methods">
+    <img src="images/paytm.svg" alt="Payment Methods">
+    <img src="images/phonpay.svg" alt="Payment Methods">
+    <img src="images/sbi.svg" alt="Payment Methods">
+    <img src="images/hdfc.svg" alt="Payment Methods">
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>Privacy Policy | Terms and Conditions</p>
+    <p>© 2026 MSF Educational Trust. All Rights Reserved.</p>
+  </div>
+
+</footer>
+
+<div id="backTop">↑</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/sub-page.js"></script>
+<script src="js/footer.js"></script>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* ===============================
+     ELEMENTS
+  =============================== */
+
+  const openButtons = document.querySelectorAll(".video-open-btn");
+  const lightbox = document.getElementById("videoLightbox");
+  const container = lightbox.querySelector(".video-container");
+  const closeBtn = lightbox.querySelector(".video-lightbox-close");
+
+  if (!openButtons.length || !lightbox) return;
+
+  /* ===============================
+     OPEN VIDEO MODAL
+  =============================== */
+
+  openButtons.forEach(btn => {
+    btn.addEventListener("click", function () {
+
+      const type = btn.dataset.videoType;
+      const src = btn.dataset.videoSrc;
+
+      let videoHTML = "";
+
+      if (type === "youtube" || type === "vimeo") {
+        videoHTML = `
+          <iframe
+            src="${src}?autoplay=1&rel=0"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen>
+          </iframe>
+        `;
+      }
+
+      if (type === "mp4") {
+        videoHTML = `
+          <video controls autoplay>
+            <source src="${src}" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        `;
+      }
+
+      container.innerHTML = videoHTML;
+      lightbox.classList.add("active");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  /* ===============================
+     CLOSE VIDEO MODAL
+  =============================== */
+
+  function closeVideo() {
+    lightbox.classList.remove("active");
+    container.innerHTML = ""; // 🔑 stops video completely
+    document.body.style.overflow = "";
+  }
+
+  // Close button
+  closeBtn.addEventListener("click", closeVideo);
+
+  // Click outside video
+  lightbox.addEventListener("click", function (e) {
+    if (e.target === lightbox) {
+      closeVideo();
+    }
+  });
+
+  // ESC key close
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && lightbox.classList.contains("active")) {
+      closeVideo();
+    }
+  });
+
+});
+</script>
+
+</body>
+</html>

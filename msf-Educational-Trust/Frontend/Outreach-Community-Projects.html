@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MSF | Outreach and Community Projects </title>
+
+<meta name="description" content="MSF Educational Trust is dedicated to transforming lives through education, skill development, health care, and social empowerment. Join us in creating lasting change.">
+<meta name="keywords" content="MSF Educational Trust, NGO India, Education Trust, Child Welfare, Non Profit Organization, Donate, Volunteer, Social Work, Skill Development, Community Support">
+<meta name="author" content="MSF Educational Trust">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="MSF Educational Trust | Empowering Lives Through Education">
+<meta property="og:description" content="Together we transform lives. Support education, health, and opportunity for communities in need.">
+<meta property="og:image" content="https://msf-trust.netlify.app/images/MSF-logo.png">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:site_name" content="MSF Educational Trust">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MSF Educational Trust | Empowering Lives">
+<meta name="twitter:description" content="Support education and social empowerment initiatives across communities.">
+<meta name="twitter:image" content="https://msf-trust.netlify.app/images/MSF-logo.png">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#ffb703">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-status-bar-style" content="black-translucent">
+
+<link rel="icon" href="images/MSF-logo.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/MSF-logo.png">
+
+<!--Production-Grade code-->
+<meta name="google-site-verification" content="google-site-verification=RBwOueXlnoEoQ-h30ZR7auWxHExcFoU0P1oyQdtF2_I">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/sub-hero.css">
+<link rel="stylesheet" href="css/styles-sub.css">
+<link rel="stylesheet" href="css/footer.css">
+<style>
+  /* =========================
+Outreach & Community Projects
+========================= */
+
+:root {
+  --primary-color: #0a3d62;
+  --secondary-color: #1e7bbf;
+  --text-dark: #1f2933;
+  --text-light: #6b7280;
+  --bg-light: #f7f9fc;
+  --white: #ffffff;
+}
+
+/* Page Wrapper */
+.outreach-page {
+  width: 100%;
+  padding: 80px 6%;
+  background: var(--white);
+}
+
+/* =========================
+Page Header
+========================= */
+.page-header {
+  max-width: 900px;
+  margin-bottom: 70px;
+}
+
+.page-header h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-bottom: 16px;
+}
+
+.page-header p {
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--text-light);
+}
+
+/* =========================
+Section Layout
+========================= */
+.outreach-section {
+  padding: 70px 0;
+}
+
+.outreach-section.light-bg {
+  background: var(--bg-light);
+}
+
+/* Content Grid */
+.outreach-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+
+.outreach-content.reverse {
+  flex-direction: row-reverse;
+}
+
+/* =========================
+Text Block
+========================= */
+.text-block {
+  flex: 1;
+}
+
+.text-block.full-width {
+  max-width: 900px;
+}
+
+.text-block h2 {
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 18px;
+}
+
+.text-block h2 .location {
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--secondary-color);
+  margin-top: 6px;
+}
+
+.text-block p {
+  font-size: 16px;
+  line-height: 1.8;
+  color: var(--text-dark);
+}
+
+/* =========================
+Image Block
+========================= */
+.image-block {
+  flex: 1;
+  position: relative;
+}
+
+.image-block img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  transition: transform 0.6s ease, box-shadow 0.6s ease;
+}
+
+.image-block img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 25px 55px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================
+Arrow List
+========================= */
+.arrow-list {
+  margin-top: 30px;
+  padding-left: 0;
+  list-style: none;
+}
+
+.arrow-list li {
+  position: relative;
+  padding-left: 32px;
+  margin-bottom: 14px;
+  font-size: 16px;
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.arrow-list li::before {
+  content: "➤";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--secondary-color);
+  font-size: 16px;
+}
+
+/* =========================
+Subtle Entrance Motion
+(Activated later via JS or CSS class)
+========================= */
+.outreach-section {
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.outreach-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+Responsive Design
+========================= */
+@media (max-width: 1024px) {
+  .outreach-content {
+    gap: 35px;
+  }
+
+  .image-block img {
+    height: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .outreach-page {
+    padding: 60px 5%;
+  }
+
+  .page-header h1 {
+    font-size: 34px;
+  }
+
+  .outreach-content,
+  .outreach-content.reverse {
+    flex-direction: column;
+  }
+
+  .image-block img {
+    height: 280px;
+  }
+
+  .text-block h2 {
+    font-size: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-header h1 {
+    font-size: 28px;
+  }
+
+  .text-block p,
+  .arrow-list li {
+    font-size: 15px;
+  }
+
+  .image-block img {
+    height: 240px;
+  }
+}
+
+</style>
+</head>
+<body>
+  <!--Header section -->
+  <header class="msf-header">
+  <div class="header-inner">
+
+    <!-- LOGO -->
+    <div class="logo-box" onclick="location.href='index.html'">
+      <img src="images/MSF-logo.png" alt="MSF Logo">
+      <span>MSF Educational Trust</span>
+    </div>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="nav-area">
+      <ul class="nav-links">
+
+        <li class="dropdown">
+          <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="background.html">Background</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mission-vision.html">Mission & Vision</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="patrons.html">Patrons</a></li>
+            <li><a href="Annual-Reports.html">Annual Reports</a></li>
+            <li><a href="Financial-Documents.html">Financial Documents</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">What We Do<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+            <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+            <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+            <li><a href="Mental-Health.html">Mental Health</a></li>
+            <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+            <li><a href="edu-programs.html">Education & Skill Building</a></li>
+            <li><a href="Success-Stories.html">Success Stories</a></li>
+            <li><a href="Annual-Tour.html">Annual Tour</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate Online</a></li>
+            <li><a href="Volunteers-post.html">Volunteers</a></li>
+            <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+            <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Gallery<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+            <li><a href="Newsletter.html">Newsletter</a></li>
+            <li><a href="Press-Releases.html">Press Releases</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Video-Gallery.html">Video Gallery</a></li>
+          </ul>
+        </li>
+<!-- 
+        <li class="dropdown">
+          <a href="#">City Walk<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Overview</a></li>
+            <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+            <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+            <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+            <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+            <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+            <li><a href="Media-Coverage.html">Media Coverage</a></li>
+            <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+          </ul>
+        </li> -->
+
+      </ul>
+    </nav>
+
+    <!-- ACTION BUTTONS + TOGGLE -->
+    <div class="action-buttons">
+      <a href="volunteer.html" class="btn login-btn">
+        <span class="full-text">Volunteer Login</span>
+        <span class="short-text">Login</span>
+      </a>
+
+      <a href="donate.html" class="btn donate-btn">
+        <span class="rupee">₹</span>
+        <span>Donate</span>
+      </a>
+
+      <div class="menu-toggle" aria-label="Open Menu">&#9776;</div>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <nav class="mobile-menu" aria-label="Mobile Navigation">
+    <ul class="nav-links">
+
+      <li class="dropdown">
+        <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="background.html">Background</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mission-vision.html">Mission & Vision</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="patrons.html">Patrons</a></li>
+          <li><a href="Annual-Reports.html">Annual Reports</a></li>
+          <li><a href="Financial-Documents.html">Financial Documents</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">What We Do<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+          <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+          <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+          <li><a href="Mental-Health.html">Mental Health</a></li>
+          <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+          <li><a href="edu-programs.html">Education & Skill Building</a></li>
+          <li><a href="Success-Stories.html">Success Stories</a></li>
+          <li><a href="Annual-Tour.html">Annual Tour</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="donate.html">Donate Online</a></li>
+          <li><a href="Volunteers-post.html">Volunteers</a></li>
+          <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+          <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Gallery<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+          <li><a href="Newsletter.html">Newsletter</a></li>
+          <li><a href="Press-Releases.html">Press Releases</a></li>
+          <li><a href="Photo.html">Photo Gallery</a></li>
+          <li><a href="Video-Gallery.html">Video Gallery</a></li>
+        </ul>
+      </li>
+<!-- 
+      <li class="dropdown">
+        <a href="#">City Walk<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Overview</a></li>
+          <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+          <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+          <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+          <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+          <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+          <li><a href="Media-Coverage.html">Media Coverage</a></li>
+          <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+        </ul>
+      </li> -->
+
+    </ul>
+  </nav>
+
+</header>
+
+<!-- ================= SUB PAGE HERO : CONTACT ================= -->
+
+<section class="sub-hero">
+
+  <div class="sub-hero-slider">
+
+    <div class="sub-hero-slide active" style="background-image: url('images/bg_1.jpg');">
+      <div class="sub-hero-overlay"></div>
+
+      <div class="sub-hero-content">
+        <h1>
+          <div class="sub-breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="#">Community Projects</a>
+        </div>
+
+          <span class="sub-deco"><img src="images/motive.png"></span>
+          Outreach and Community Projects
+          <span class="sub-deco"><img src="images/motive-1.png"></span>
+        </h1>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ SUB HERO WAVES ============ -->
+
+<div class="sub-hero-wave wave-back">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path
+      d="M0,60 
+         C120,100 240,20 360,50 
+         C480,80 600,30 720,50 
+         C840,70 960,40 1080,60 
+         C1200,80 1320,40 1440,50 
+         L1440,0 L0,0 Z">
+    </path>
+  </svg>
+</div>
+
+<div class="sub-hero-wave wave-front">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path
+      d="M0,60 
+         C120,100 240,20 360,50 
+         C480,80 600,30 720,50 
+         C840,70 960,40 1080,60 
+         C1200,80 1320,40 1440,50 
+         L1440,0 L0,0 Z">
+    </path>
+  </svg>
+</div>
+
+<!-- =========================
+Outreach & Community Projects
+========================= -->
+
+<section class="outreach-page">
+
+  <!-- Page Header -->
+  <header class="page-header">
+    <h1>Outreach & Community Projects</h1>
+    <p>
+      Our outreach initiatives focus on reaching vulnerable communities directly,
+      ensuring access to education, care, and long-term developmental support.
+    </p>
+  </header>
+
+  <!-- =========================
+  Contact Points & Community Contact Points
+  ========================= -->
+  <section class="outreach-section">
+    <div class="outreach-content">
+      <div class="text-block">
+        <h2>Contact Points & Community Contact Points</h2>
+        <p>
+          Our Contact Points serve as accessible hubs within communities where children
+          and families can connect with educational support, guidance, and essential
+          services. These centers act as the first point of engagement for outreach,
+          early intervention, and continued care.
+        </p>
+      </div>
+
+      <div class="image-block">
+        <img src="images/edu-1.jpg" alt="Community Contact Points">
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+  Mobile School
+  ========================= -->
+  <section class="outreach-section light-bg">
+    <div class="outreach-content reverse">
+      <div class="text-block">
+        <h2>Mobile School</h2>
+        <p>
+          The Mobile School initiative brings education directly to children who lack
+          access to formal schooling. By reaching children in their own environments,
+          we ensure continuity of learning, foundational education, and emotional
+          encouragement.
+        </p>
+      </div>
+
+      <div class="image-block">
+        <img src="images/edu.gif" alt="Mobile School Programme">
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+  Children's Hope India – Cradle to Career Program (Seelampur)
+  ========================= -->
+  <section class="outreach-section">
+    <div class="outreach-content">
+      <div class="text-block">
+        <h2>
+          Children’s Hope India – Cradle to Career Program
+          <span class="location">(Seelampur)</span>
+        </h2>
+        <p>
+          The Cradle to Career Program supports children from early childhood through
+          their educational journey, ensuring sustained academic progress, life skills
+          development, and long-term stability. The initiative focuses on holistic
+          growth through education, mentorship, and community involvement.
+        </p>
+      </div>
+
+      <div class="image-block">
+        <img src="images/children-in-seruds-orphanage-kurnool.jpg" alt="Cradle to Career Program Seelampur">
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================
+  Our Contact Points / Day Care Centers
+  ========================= -->
+  <section class="outreach-section light-bg">
+    <div class="outreach-content">
+      <div class="text-block full-width">
+        <h2>Our Contact Points / Day Care Centers</h2>
+        <p>
+          Our Day Care Centers provide a safe, nurturing environment for children,
+          supporting early learning, care, nutrition, and emotional well-being while
+          families pursue livelihood opportunities.
+        </p>
+
+        <ul class="arrow-list">
+          <li>Safe and child-friendly learning environments</li>
+          <li>Early childhood education and care</li>
+          <li>Nutrition and health monitoring</li>
+          <li>Community-based support systems</li>
+          <li>Parental engagement and awareness programs</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</section>
+
+<!--Footer Section -->
+<footer class="ngo-footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND + SOCIAL -->
+    <div class="footer-brand">
+      <img src="images/MSF-logo.png" class="footer-logo" alt="MSF Educational Trust">
+
+        <p>
+          <b>MSF Educational Trust</b> is dedicated to empowering underprivileged children and communities
+          through education, care, and life-building opportunities. Together, we build hope, dignity,
+          and a brighter future.
+        </p>
+
+      <div class="footer-social">
+        <a href="www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="x.com"><i class="fab fa-x-twitter"></i></a>
+        <a href="www.youtube.com/"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- WHO WE ARE -->
+    <div class="footer-col">
+      <h4>Who We Are</h4>
+      <ul>
+        <li><a href="mission-vision.html">Mission & Vision</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="Financial-Documents.html">Financial Documents</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+      </ul>
+
+      <h4 class="mt">How to Empower Us</h4>
+      <ul>
+        <li><a href="donate.html">Donate Online</a></li>
+        <li><a href="volunteer.html">Volunteers</a></li>
+        <li><a href="patrons.html">Patrons</a></li>
+        <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+      </ul>
+    </div>
+
+    <!-- WHAT WE DO -->
+    <div class="footer-col">
+      <h4>What We Do</h4>
+      <ul>
+        <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+        <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+        <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+        <li><a href="edu-programs.html">Education & Skill Building</a></li>
+        <li><a href="Performing-Arts.html">Performing Arts</a></li>
+        <li><a href="Success-Stories.html">Success Stories</a></li>
+        <li><a href="Annual-Tour.html">Annual Tour</a></li>
+      </ul>
+    </div>
+
+    <!-- CITY WALK + GALLERY -->
+    <div class="footer-col">
+      <h4>City Walk</h4>
+      <ul>
+        <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+        <li><a href="Media-Coverage.html">Media Coverage</a></li>
+        <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+        <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+        <li><a href="Exploring-Shahjahanabad.html">Exploring Walled City <!-- <span class="new-tag">NEW</span></a></li> -->
+      </ul>
+
+      <h4 class="mt">Gallery</h4>
+      <ul>
+        <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+        <li><a href="Newsletter.html">Newsletter</a></li>
+        <li><a href="Press-Releases.html">Press Release</a></li>
+        <li><a href="blogs.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT + MAP -->
+    <div class="footer-col footer-contact">
+      <h4>Contact Us</h4>
+
+      <p>
+        📍 2nd Floor, DDA Community Centre,<br>
+        Chandi Wali Gali, Paharganj,<br>
+        New Delhi - 110055
+      </p>
+
+      <p>
+        ✉ contact@msftrust.org<br>
+        tanya@msftrust.org
+      </p>
+
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps?q=Paharganj%20New%20Delhi&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DONATION STRIP -->
+  <div class="footer-donations">
+    <span>Donation Gateway Options:</span>
+    <img src="images/rupey.svg" alt="Payment Methods">
+    <img src="images/visa.svg" alt="Payment Methods">
+    <img src="images/mastercard.svg" alt="Payment Methods">
+    <img src="images/upi.svg" alt="Payment Methods">
+    <img src="images/gpay.svg" alt="Payment Methods">
+    <img src="images/paytm.svg" alt="Payment Methods">
+    <img src="images/phonpay.svg" alt="Payment Methods">
+    <img src="images/sbi.svg" alt="Payment Methods">
+    <img src="images/hdfc.svg" alt="Payment Methods">
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>Privacy Policy | Terms and Conditions</p>
+    <p>© 2026 MSF Educational Trust. All Rights Reserved.</p>
+  </div>
+
+</footer>
+
+<div id="backTop">↑</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/sub-page.js"></script>
+<script src="js/footer.js"></script>
+
+</body>
+</html>

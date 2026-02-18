@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+
+/* ================= ROOT & RESET ================= */
+:root{
+  --menu-ease:cubic-bezier(0.4,0,0.2,1);
+  --menu-duration:0.35s;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+/* ================= HEADER ================= */
+.msf-header{
+  padding:12px;
+  position:sticky;
+  top:0;
+  z-index:9999;
+}
+
+.header-inner{
+  max-width:1400px;
+  margin:auto;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  background: rgba(255,255,255,0.12);
+  border:1px solid rgba(255,255,255,0.25);
+  border-radius:18px;
+  padding:14px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 10px 40px rgba(0,0,0,0.25);
+  transition: all 0.4s ease;
+}
+
+/* ================= LOGO ================= */
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+}
+
+.logo-box img{
+  width:48px;
+}
+
+.logo-box span{
+  font-size:20px;
+  font-weight:600;
+  color:#1b2b34;
+  transition:color 0.35s ease;
+}
+
+/* ================= NAV ================= */
+.nav-area{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.nav-links,
+.nav-links ul,
+.nav-links li{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links li{
+  position:relative;
+}
+
+.nav-links a{
+  position:relative;
+  text-decoration:none;
+  font-weight:500;
+  padding:8px 0;
+  color:#1b2b34;
+}
+
+.nav-links a:hover{
+  color:#ffd369;
+}
+
+.nav-links a::after{
+  content:'';
+  position:absolute;
+  width:0;
+  height:2px;
+  left:0;
+  bottom:-6px;
+  background:currentColor;
+  opacity:0.7;
+  transition:0.35s;
+}
+
+.nav-links a:hover::after{
+  width:100%;
+}
+
+/* ================= DROPDOWN ================= */
+.dropdown-menu{
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:240px;
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(14px);
+  border-radius:16px;
+  padding:12px 0;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(22px);
+  transition:
+    opacity var(--menu-duration) var(--menu-ease),
+    transform var(--menu-duration) var(--menu-ease),
+    visibility var(--menu-duration);
+  z-index:999;
+}
+
+.dropdown:hover > .dropdown-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateY(0);
+}
+
+.dropdown-menu li{
+  position:relative;
+}
+
+.dropdown-menu a{
+  display:block;
+  padding:12px 22px;
+  color:#203a43;
+  font-weight:500;
+  transition:padding 0.3s ease,color 0.3s ease;
+}
+
+.dropdown-menu a,
+.sub-menu a{
+  position:relative;
+  padding:12px 22px 16px; /* 👈 extra bottom padding */
+  color:#203a43;
+  font-weight:500;
+  display:block;
+}
+
+.dropdown-menu a::after,
+.sub-menu a::after{
+  content:'';
+  position:absolute;
+  left:22px;
+  bottom:8px; /* 👈 stays inside rounded area */
+  width:0;
+  height:2px;
+  background:currentColor;
+  opacity:0.7;
+  transition:width 0.35s ease;
+}
+
+.dropdown-menu a:hover::after,
+.sub-menu a:hover::after{
+  width:calc(100% - 44px); /* 👈 respects left & right padding */
+}
+
+.dropdown-menu a:hover{
+  color:#ff512f;
+  background:none;
+}
+
+.dropdown-menu a:hover,
+.sub-menu a:hover{
+  background:rgba(0,0,0,0.04);
+  border-radius: 16px;
+}
+
+/* SUB DROPDOWN */
+.sub-menu{
+  position:absolute;
+  top:0;
+  left:100%;
+  margin-left:10px;
+  min-width: 220px;
+
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(14px);
+  border-radius:16px;
+  padding:12px 0;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateX(22px);
+  transition:
+  opacity var(--menu-duration) var(--menu-ease),
+  transform var(--menu-duration) var(--menu-ease),
+  visibility var(--menu-duration);
+  z-index:999;
+}
+
+.sub-dropdown:hover > .sub-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(0);
+}
+
+/* DROPDOWN ARROW */
+.dropdown > a::after{
+  content:'';
+  margin-left:6px;
+  display:inline-block;
+  transition:transform 0.35s ease;
+  transition:transform var(--menu-duration) var(--menu-ease);
+}
+
+.dropdown:hover > a::after{
+  transform:rotate(180deg);
+}
+
+/* ================= MEGA MENU ================= */
+.mega-dropdown{
+  position:relative;
+}
+
+.mega-menu{
+  position:absolute;
+  left:50%;
+  top:100%;
+  width:720px;
+  padding:30px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:30px;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: blur(14px);
+  border-radius:16px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+  opacity:0;
+  visibility:hidden;
+  transform:translateX(-50%) translateY(20px);
+  transition:0.35s ease;
+}
+
+.mega-dropdown:hover .mega-menu{
+  opacity:1;
+  visibility:visible;
+  transform:translateX(-50%) translateY(0);
+}
+
+.mega-column h4{
+  margin-bottom:14px;
+  font-size:16px;
+  color:#203a43;
+}
+
+.mega-column a{
+  display:block;
+  padding:8px 0;
+  color:#203a43;
+  text-decoration:none;
+}
+
+.mega-column a:hover{
+  color:#ff512f;
+}
+
+/* ================= BUTTONS ================= */
+.action-buttons{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.btn{
+  padding:10px 18px;
+  border-radius:30px;
+  text-decoration:none;
+  font-weight:600;
+  font-size:14px;
+  transition:all 0.35s ease;
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.login-btn{
+  background:#ffffff;
+  color:#203a43;
+}
+
+.donate-btn{
+  position:relative;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#fff;
+  overflow:hidden;
+  background:linear-gradient(135deg,#ff512f,#f09819);
+  animation:donatePulse 2.2s infinite;
+}
+
+.donate-btn .rupee{
+  font-size:18px;
+  font-weight:700;
+  animation:rupeeBounce 1.8s infinite;
+}
+
+.donate-btn::before{
+  content:'';
+  position:absolute;
+  inset:-2px;
+  background:linear-gradient(135deg,#ff7a18,#ff512f,#ffd369);
+  z-index:-1;
+  filter:blur(12px);
+  opacity:0.7;
+}
+
+.donate-btn:hover{
+  animation:none;
+  transform:translateY(-3px) scale(1.04);
+  box-shadow:0 12px 30px rgba(255,81,47,0.6);
+  background:linear-gradient(135deg,#ff7a18,#ff512f);
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes donatePulse{
+  0%{box-shadow:0 0 0 0 rgba(255,81,47,0.6);}
+  70%{box-shadow:0 0 0 14px rgba(255,81,47,0);}
+  100%{box-shadow:0 0 0 0 rgba(255,81,47,0);}
+}
+
+@keyframes rupeeBounce{
+  0%, 100%{transform:translateY(0);}
+  50%{transform:translateY(-4px);}
+}
+
+/* ================= MOBILE MENU ================= */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+.mobile-menu{
+  display:none;
+  background:#fff;
+  margin-top:12px;
+  border-radius:12px;
+  padding:16px;
+}
+
+.mobile-menu a{
+  display:block;
+  padding:10px;
+  text-decoration:none;
+  font-weight:500;
+  color:#203a43;
+}
+
+.mobile-menu a:hover{
+  background:#f2f2f2;
+}
+
+/* ================= SCROLL STATE ================= */
+.msf-header.scrolled .header-inner{
+  background: rgba(15,32,39,0.85);
+  backdrop-filter: blur(20px);
+  box-shadow:0 12px 45px rgba(0,0,0,0.45);
+}
+
+.msf-header.scrolled .nav-links a,
+.msf-header.scrolled .logo-box span{
+  color:#ffffff;
+}
+
+.msf-header.scrolled .login-btn{
+  background:rgba(255,255,255,0.9);
+}
+
+/* ================= RESPONSIVE ================= */
+.short-text{display:none;}
+
+@media(min-width:1025px){
+  .nav-area{display:flex !important;}
+}
+
+@media(max-width:1024px){
+  .nav-area{display:none;}
+  .menu-toggle{display:block;}
+  .dropdown-menu,
+  .sub-menu,
+  .mega-menu{display:none;}
+  .dropdown-menu, .sub-menu, .mega-menu{
+    display:none !important;
+  }
+}
+
+@media(max-width:600px){
+  .full-text{display:none;}
+  .short-text{display:inline;}
+  .logo-box span{display:none;}
+}
+
+.demobox{
+    background-color: #0f2027;
+    border: 80px solid white;
+    height: 70vh;
+}
+
+    </style>
+</head>
+<body>
+    <header class="msf-header">
+  <div class="header-inner">
+
+    <!-- Logo Section -->
+    <div class="logo-box" onclick="location.href='index.html'">
+      <img src="images/MSF-logo.png" alt="MSF Logo">
+      <span>MSF Educational Trust</span>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="nav-area">
+      <ul class="nav-links">
+        <li><a href="#">Home</a></li>
+
+        <li class="dropdown">
+          <a href="#">About ▾</a>
+          <ul class="dropdown-menu">
+            <li class="sub-dropdown">
+                <a href="#">Our Trust</a>
+
+                <ul class="sub-menu">
+                    <li><a href="#">Branch</a></li>
+                    <li><a href="#">Nation</a></li>
+                    <li><a href="#">More</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Vision & Mission</a></li>
+          </ul>
+        </li>
+
+        <li class="mega-dropdown">
+  <a href="#">Programs</a>
+
+  <div class="mega-menu">
+    <div class="mega-column">
+      <h4>Education</h4>
+      <a href="#">Scholarships</a>
+      <a href="#">Free Coaching</a>
+      <a href="#">Digital Learning</a>
+    </div>
+
+    <div class="mega-column">
+      <h4>Skill Training</h4>
+      <a href="#">Technical Skills</a>
+      <a href="#">Soft Skills</a>
+      <a href="#">Internships</a>
+    </div>
+
+    <div class="mega-column">
+      <h4>Community</h4>
+      <a href="#">Women Empowerment</a>
+      <a href="#">Youth Programs</a>
+      <a href="#">Rural Development</a>
+    </div>
+  </div>
+</li>
+
+
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Buttons -->
+    <div class="action-buttons">
+      <a href="#" class="btn login-btn">
+        <span class="full-text">Volunteer Login</span>
+        <span class="short-text">Login</span>
+      </a>
+      <a href="#" class="btn donate-btn">
+        <span class="rupee">₹</span>
+        <span>Donate</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      <div class="menu-toggle">&#9776;</div>
+    </div>
+
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Our Trust</a></li>
+      <li><a href="#">Vision & Mission</a></li>
+      <li><a href="#">Scholarship</a></li>
+      <li><a href="#">Free Coaching</a></li>
+      <li><a href="#">Skill Training</a></li>
+      <li><a href="#">Gallery</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="demobox"></section>
+<section class="demobox"></section>
+<section class="demobox"></section>
+
+<script>
+document.querySelector('.menu-toggle').onclick = () => {
+  document.querySelector('.mobile-menu').classList.toggle('show');
+}
+
+window.addEventListener('scroll',()=>{
+  document.querySelector('.msf-header')
+  .classList.toggle('scrolled',window.scrollY>60);
+});
+</script>
+
+<style>
+.mobile-menu.show{display:block;}
+</style>
+
+
+</body>
+</html>

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MSF Educational Trust</title>
+
+  <style>
+    /* ================= ROOT ================= */
+:root{
+  --menu-ease:cubic-bezier(0.4,0,0.2,1);
+  --menu-duration:0.35s;
+}
+
+/* ================= RESET ================= */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+ul{list-style:none;}
+a{text-decoration:none;}
+
+/* ================= HEADER ================= */
+.msf-header{
+  position:sticky;
+  top:0;
+  z-index:9999;
+  padding:12px;
+}
+
+.header-inner{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+
+  padding:14px 20px;
+  border-radius:18px;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(16px);
+  -webkit-backdrop-filter:blur(16px);
+  border:1px solid rgba(255,255,255,0.25);
+  box-shadow:0 10px 40px rgba(0,0,0,0.25);
+  transition:all 0.4s ease;
+}
+
+/* ================= LOGO ================= */
+.logo-box{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  cursor:pointer;
+}
+
+.logo-box img{width:48px;}
+.logo-box span{
+  font-size:20px;
+  font-weight:600;
+  color:#1b2b34;
+}
+
+/* ================= DESKTOP NAV ================= */
+.nav-area{
+  flex:1;
+  display:flex;
+  justify-content:center;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+}
+
+.nav-links li{position:relative;}
+
+.nav-links > li > a{
+  font-weight:500;
+  padding:8px 0;
+  color:#1b2b34;
+  position:relative;
+}
+
+/* underline */
+.nav-links > li > a::after{
+  content:'';
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:currentColor;
+  transition:0.35s;
+}
+
+.nav-links > li > a:hover::after{
+  width:100%;
+}
+
+.nav-links > li > a:hover{
+  color:#ffd369;
+}
+
+/* ================= DROPDOWN DESKTOP ================= */
+.dropdown-menu{
+  position:absolute;
+  top:100%;
+  left:0;
+  min-width:240px;
+
+  background:rgba(255,255,255,0.96);
+  backdrop-filter:blur(14px);
+  border-radius:16px;
+  padding:12px 0;
+
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+
+  opacity:0;
+  visibility:hidden;
+  transform:translateY(22px);
+  pointer-events:none;
+
+  transition:
+    opacity var(--menu-duration) var(--menu-ease),
+    transform var(--menu-duration) var(--menu-ease);
+}
+
+
+.dropdown-menu a{
+  display:block;
+  padding:12px 22px 16px;
+  font-weight:500;
+  color:#203a43;
+  position:relative;
+  transition: .3s;
+}
+
+.dropdown-menu a::after{
+  content:'';
+  position:absolute;
+  left:22px;
+  bottom:8px;
+  width:0;
+  height:2px;
+  background:currentColor;
+  transition:0.35s;
+}
+
+.dropdown-menu a:hover::after{
+  width:calc(100% - 44px);
+}
+
+.dropdown-menu a:hover{
+  background:rgba(0,0,0,0.04);
+  border-radius:12px;
+  color:#ff512f;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.action-buttons{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.btn{
+  padding:10px 18px;
+  border-radius:30px;
+  font-size:14px;
+  font-weight:600;
+  transition:0.35s ease;
+}
+
+.login-btn{
+  background:#fff;
+  color:#203a43;
+}
+
+.donate-btn{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  color:#fff;
+  background:linear-gradient(135deg,#ff512f,#f09819);
+}
+
+.btn:hover{
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(0,0,0,0.25);
+}
+
+/* ================= TOGGLE ================= */
+.menu-toggle{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+/* ================= MOBILE MENU ================= */
+.mobile-menu{
+  display:none;
+  margin-top:12px;
+  background:#fff;
+  border-radius:14px;
+  padding:14px;
+  box-shadow:0 20px 50px rgba(0,0,0,0.25);
+}
+
+.mobile-menu .dropdown-menu{
+  display:block;
+  position: static;
+  max-height:0;
+  overflow:hidden;
+  background:transparent;
+  box-shadow:none;
+  transition:max-height 0.35s ease;
+}
+
+.mobile-menu .nav-links > li > a{
+  padding:12px;
+  font-weight:600;
+  color:#203a43;
+}
+
+.mobile-menu.show {
+  display: block;
+}
+
+.mobile-menu .dropdown-menu{
+  position:static;
+  max-height:0;
+  overflow:hidden;
+
+  opacity:1;
+  visibility:visible;
+  transform:none;
+  pointer-events:auto;
+
+  transition:max-height 0.35s ease;
+  box-shadow:none;
+  background:transparent;
+  padding:0 0 0 12px;
+}
+
+.mobile-menu .dropdown-menu.open{
+  padding:6px 0 6px 12px;
+}
+
+
+.mobile-menu .dropdown-menu a{
+  padding:10px 12px;
+  font-weight:500;
+  color:#555;
+}
+
+.mobile-menu .dropdown-menu a:hover{
+  background:#f2f2f2;
+}
+
+/* ================= SCROLL STATE ================= */
+.msf-header.scrolled .header-inner{
+  background:rgba(15,32,39,0.85);
+  backdrop-filter:blur(20px);
+}
+
+.msf-header.scrolled a,
+.msf-header.scrolled .logo-box span{
+  color:#fff;
+}
+.msf-header.scrolled .action-buttons a{
+  color:#0f2027;
+}
+/* ================= RESPONSIVE ================= */
+.short-text{display:none;}
+
+@media(min-width:1025px){
+  .nav-area .dropdown:hover > .dropdown-menu{
+    opacity:1;
+    visibility:visible;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+}
+
+
+@media(max-width:1024px){
+
+  .nav-area{
+    display:none;
+  }
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .mobile-menu .nav-links{
+    display:flex !important;
+    flex-direction:column;
+    gap:6px;
+  }
+
+  .mobile-menu a::after{
+    display:none !important;
+  }
+
+  .mobile-menu .nav-links > li > a{
+    padding:12px;
+    font-weight:600;
+    color:#203a43;
+    border-bottom:1px solid rgba(0,0,0,0.08);
+  }
+
+  .mobile-menu .dropdown-menu a{
+    padding:10px 12px;
+    font-weight:500;
+    color:#555;
+    border-bottom:1px solid rgba(0,0,0,0.06);
+  }
+
+  .mobile-menu .dropdown-menu a:last-child{
+    border-bottom: 1px solid #f096197e ;
+  }
+
+  .mobile-menu a:hover{
+    background:none;
+    color:#ff512f;
+  }
+
+  .mobile-menu .dropdown-menu a:hover{
+    background:none;
+    color:#ff512f;
+    border-bottom-color:#ff512f;
+  }
+
+  .mobile-menu .dropdown > a{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+
+  .mobile-menu .dropdown > a::after{
+    content:'▾';
+    font-size:14px;
+    transition:transform 0.3s ease;
+  }
+
+  .mobile-menu .dropdown-menu.open{
+    margin-bottom:6px;
+  }
+
+ .mobile-menu .dropdown > a{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+  }
+
+  .mobile-menu .dropdown > a::after{
+    content:'▾';
+    transition:transform 0.3s ease;
+  }
+
+  .mobile-menu .dropdown-menu.open{
+    margin-bottom:6px;
+  }
+
+  .mobile-menu .dropdown-menu.open
+  ~ a::after{
+    transform:rotate(180deg);
+  }
+
+}
+
+@media(max-width:600px){
+  .logo-box span{display:none;}
+  .full-text{display:none;}
+  .short-text{display:inline;}
+}
+
+/******* DROPDOWN ARROW *******/
+
+.arrow{
+  display:inline-block;
+  margin-left:6px;
+  font-size:15px;
+  line-height: 1;
+  transition:transform 0.3s ease, opacity 0.3s ease;
+}
+@media(min-width:1025px){
+  .nav-area .dropdown:hover > a .arrow{
+    transform:rotate(180deg);
+    opacity:1;
+
+  }
+}
+@media(max-width:1024px){
+  .mobile-menu .dropdown-menu.open ~ a .arrow{
+    transform:rotate(180deg);
+    opacity:1;
+  }
+}
+
+
+
+
+/* ================= DEMO ================= */
+.demobox{
+  height:70vh;
+  background:#0f2027;
+  border:80px solid #fff;
+}
+
+
+
+
+  </style>
+</head>
+
+<body>
+
+<header class="msf-header">
+  <div class="header-inner">
+
+    <!-- LOGO -->
+    <div class="logo-box" onclick="location.href='index.html'">
+      <img src="images/MSF-logo.png" alt="MSF Logo">
+      <span>MSF Educational Trust</span>
+    </div>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="nav-area">
+      <ul class="nav-links">
+
+        <li class="dropdown">
+          <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="background.html">Background</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mission-vision.html">Mission & Vision</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="patrons.html">Patrons</a></li>
+            <li><a href="Annual-Reports.html">Annual Reports</a></li>
+            <li><a href="Financial-Documents.html">Financial Documents</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">What We Do<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+            <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+            <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+            <li><a href="Mental-Health.html">Mental Health</a></li>
+            <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+            <li><a href="edu-programs.html">Education & Skill Building</a></li>
+            <li><a href="Performing-Arts.html">Performing Arts</a></li>
+            <li><a href="Restoration-Rehabilitation.html">Restoration & Rehabilitation</a></li>
+            <li><a href="Restoration-Follow-Up.html">Restoration & Follow Up</a></li>
+            <li><a href="Success-Stories.html">Success Stories</a></li>
+            <li><a href="Annual-Tour.html">Annual Tour</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate Online</a></li>
+            <li><a href="Volunteers-post.html">Volunteers</a></li>
+            <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+            <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Gallery<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+            <li><a href="Newsletter.html">Newsletter</a></li>
+            <li><a href="Press-Releases.html">Press Releases</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Video-Gallery.html">Video Gallery</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">City Walk<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Overview</a></li>
+            <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+            <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+            <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+            <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+            <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+            <li><a href="Media-Coverage.html">Media Coverage</a></li>
+            <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+          </ul>
+        </li>
+
+      </ul>
+    </nav>
+
+    <!-- ACTION BUTTONS + TOGGLE -->
+    <div class="action-buttons">
+      <a href="volunteer.html" class="btn login-btn">
+        <span class="full-text">Volunteer Login</span>
+        <span class="short-text">Login</span>
+      </a>
+
+      <a href="donate.html" class="btn donate-btn">
+        <span class="rupee">₹</span>
+        <span>Donate</span>
+      </a>
+
+      <div class="menu-toggle" aria-label="Open Menu">&#9776;</div>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <nav class="mobile-menu" aria-label="Mobile Navigation">
+    <ul class="nav-links">
+
+      <li class="dropdown">
+        <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="background.html">Background</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mission-vision.html">Mission & Vision</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="patrons.html">Patrons</a></li>
+          <li><a href="Annual-Reports.html">Annual Reports</a></li>
+          <li><a href="Financial-Documents.html">Financial Documents</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">What We Do<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+          <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+          <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+          <li><a href="Mental-Health.html">Mental Health</a></li>
+          <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+          <li><a href="edu-programs.html">Education & Skill Building</a></li>
+          <li><a href="Performing-Arts.html">Performing Arts</a></li>
+          <li><a href="Restoration-Rehabilitation.html">Restoration & Rehabilitation</a></li>
+          <li><a href="Restoration-Follow-Up.html">Restoration & Follow Up</a></li>
+          <li><a href="Success-Stories.html">Success Stories</a></li>
+          <li><a href="Annual-Tour.html">Annual Tour</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="donate.html">Donate Online</a></li>
+          <li><a href="Volunteers-post.html">Volunteers</a></li>
+          <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+          <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Gallery<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+          <li><a href="Newsletter.html">Newsletter</a></li>
+          <li><a href="Press-Releases.html">Press Releases</a></li>
+          <li><a href="Photo.html">Photo Gallery</a></li>
+          <li><a href="Video-Gallery.html">Video Gallery</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">City Walk<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Overview</a></li>
+          <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+          <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+          <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+          <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+          <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+          <li><a href="Media-Coverage.html">Media Coverage</a></li>
+          <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+        </ul>
+      </li>
+
+    </ul>
+  </nav>
+
+</header>
+
+<section class="demobox"></section>
+<section class="demobox"></section>
+<section class="demobox"></section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const header = document.querySelector(".msf-header");
+
+  /* ================= MOBILE MENU TOGGLE ================= */
+  if (menuToggle && mobileMenu) {
+    menuToggle.addEventListener("click", function (e) {
+      e.stopPropagation(); // prevent outside click
+      mobileMenu.classList.toggle("show");
+    });
+  }
+
+  /* ================= CLOSE MENU ON OUTSIDE CLICK ================= */
+  document.addEventListener("click", function (e) {
+    if (
+      mobileMenu.classList.contains("show") &&
+      !mobileMenu.contains(e.target) &&
+      !menuToggle.contains(e.target)
+    ) {
+      mobileMenu.classList.remove("show");
+
+      /* Close all open dropdowns */
+      document.querySelectorAll(".mobile-menu .dropdown-menu").forEach(menu => {
+        menu.classList.remove("open");
+        menu.style.maxHeight = null;
+      });
+    }
+  });
+
+  /* ================= MOBILE DROPDOWN ACCORDION ================= */
+  const mobileDropdownLinks = document.querySelectorAll(
+    ".mobile-menu .dropdown > a"
+  );
+
+  mobileDropdownLinks.forEach(link => {
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+
+      const submenu = this.nextElementSibling;
+      if (!submenu) return;
+
+      /* Close other dropdowns */
+      document.querySelectorAll(".mobile-menu .dropdown-menu").forEach(menu => {
+        if (menu !== submenu) {
+          menu.classList.remove("open");
+          menu.style.maxHeight = null;
+        }
+      });
+
+      /* Toggle current dropdown */
+      if (submenu.classList.contains("open")) {
+        submenu.classList.remove("open");
+        submenu.style.maxHeight = null;
+      } else {
+        submenu.classList.add("open");
+        submenu.style.maxHeight = submenu.scrollHeight + "px";
+      }
+    });
+  });
+
+  /* ================= CLOSE MENU ON LINK CLICK ================= */
+  document.querySelectorAll(".mobile-menu .dropdown-menu a").forEach(link => {
+    link.addEventListener("click", () => {
+      mobileMenu.classList.remove("show");
+
+      document.querySelectorAll(".mobile-menu .dropdown-menu").forEach(menu => {
+        menu.classList.remove("open");
+        menu.style.maxHeight = null;
+      });
+    });
+  });
+
+  /* ================= SCROLL HEADER EFFECT ================= */
+  if (header) {
+    window.addEventListener("scroll", () => {
+      header.classList.toggle("scrolled", window.scrollY > 60);
+    });
+  }
+
+  /* ================= RESET MOBILE MENU ON RESIZE ================= */
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1024) {
+    // Close mobile menu
+    mobileMenu.classList.remove("show");
+
+    // Close all mobile dropdowns
+    document.querySelectorAll(".mobile-menu .dropdown-menu").forEach(menu => {
+      menu.classList.remove("open");
+      menu.style.maxHeight = null;
+    });
+  }
+});
+
+
+});
+
+
+</script>
+
+
+
+
+</body>
+</html>

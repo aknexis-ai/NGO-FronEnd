@@ -1,0 +1,327 @@
+
+<!-- Footer section -->
+
+<footer class="main-footer">
+
+  <div class="footer-top">
+    <div class="container footer-grid">
+
+      <!-- Logo & About -->
+      <div class="footer-brand">
+        <img src="images/MSF-logo.png" onclick="window.location.href = 'index.html';" class="footer-logo" alt="MSF Educational Trust">
+        <p>
+          <b>MSF Educational Trust</b> is dedicated to empowering underprivileged children and communities
+          through education, care, and life-building opportunities. Together, we build hope, dignity,
+          and a brighter future.
+        </p>
+
+        <div class="footer-socials">
+          <a href="www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+          <a href="www.instagram.com/"><i class="fab fa-instagram"></i></a>
+          <a href="www.youtube.com/"><i class="fab fa-youtube"></i></a>
+          <a href="x.com/"><i class="fab fa-twitter"></i></a>
+          <a href="www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Who We Are</a></li>
+          <li><a href="#">What We Do</a></li>
+          <li><a href="edu-programs.html">Programs</a></li>
+          <li><a href="Photo.html">Gallery</a></li>
+          <li><a href="">Success Stories</a></li>
+          <li><a href="donate.html">Donate</a></li>
+          <li><a href="volunteer.html">Volunteer</a></li>
+        </ul>
+      </div>
+
+      <!-- Programs -->
+      <div class="footer-links">
+        <h4>Our Programs</h4>
+        <ul>
+          <li><a href="edu-programs.html">Education Support</a></li>
+          <li><a href="#">Health & Nutrition</a></li>
+          <li><a href="#">Child Protection</a></li>
+          <li><a href="life-skils.html">Skill Development</a></li>
+          <li><a href="#">Women Empowerment</a></li>
+          <li><a href="life-skils.html">Community Development</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-contact">
+        <h4>Contact Us</h4>
+        <p><i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu, India</p>
+        <p><i class="fas fa-phone-alt"></i> +91 98765 43210</p>
+        <p><i class="fas fa-envelope"></i> info@msftrust.org</p>
+
+        <a href="donate.html" class="footer-donate-btn">Donate Now</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Map -->
+  <div class="footer-map">
+    <iframe
+      src="https://maps.google.com/maps?q=chennai&t=&z=13&ie=UTF8&iwloc=&output=embed"
+      loading="lazy">
+    </iframe>
+  </div>
+
+  <!-- Bottom -->
+  <div class="footer-bottom">
+    <p>© 2026 MSF Educational Trust. All Rights Reserved.</p>
+  </div>
+
+</footer>
+
+
+
+
+
+
+
+
+/* ================= FOOTER ================= */
+
+.main-footer {
+  background: linear-gradient(135deg, #0f1115, #141821);
+  color: #eaeaea;
+}
+
+/* Top Area */
+.footer-top {
+  padding: 90px 0 70px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1.1fr;
+  gap: 50px;
+}
+
+/* Brand */
+.footer-brand p {
+  margin: 20px 0 25px;
+  line-height: 1.8;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.footer-logo {
+  width: 190px;
+}
+
+/* Social */
+.footer-socials {
+  display: flex;
+  gap: 14px;
+}
+
+.footer-socials a {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffb703;
+  font-size: 16px;
+  transition: all .3s ease;
+}
+
+.footer-socials a:hover {
+  background: #ffb703;
+  color: #111;
+  transform: translateY(-3px);
+}
+
+/* Links */
+.footer-links h4,
+.footer-contact h4 {
+  font-size: 18px;
+  margin-bottom: 22px;
+  color: #fff;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 10px;
+}
+
+.footer-links a {
+  color: rgba(255,255,255,0.7);
+  font-size: 14px;
+  transition: all .3s ease;
+}
+
+.footer-links a:hover {
+  color: #ffb703;
+  padding-left: 6px;
+}
+
+/* Contact */
+.footer-contact p {
+  margin-bottom: 12px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.footer-contact i {
+  color: #ffb703;
+  margin-right: 10px;
+}
+
+/* Donate Button */
+.footer-donate-btn {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 12px 26px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #ffb703, #ffd166);
+  color: #111;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(255,183,3,.45);
+  transition: all .3s ease;
+}
+
+.footer-donate-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(255,183,3,.6);
+}
+
+/* Map */
+.footer-map iframe {
+  width: 100%;
+  height: 260px;
+  border: none;
+  filter: grayscale(90%) contrast(1.2);
+}
+
+/* Bottom */
+.footer-bottom {
+  background: #0b0d12;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 13px;
+  opacity: 0.7;
+}
+
+.footer-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all .9s ease;
+}
+
+.footer-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.newsletter {
+  margin-top: 120px;
+}
+
+.newsletter-box {
+  background: linear-gradient(135deg,#ffb703,#ffd166);
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(255,183,3,.45);
+}
+
+.newsletter-box h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.newsletter-box p {
+  opacity: .9;
+}
+
+.newsletter-box form {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.newsletter-box input {
+  padding: 12px 18px;
+  border-radius: 30px;
+  border: none;
+  width: 260px;
+}
+
+.newsletter-box button {
+  border-radius: 30px;
+  border: none;
+  padding: 12px 28px;
+  background: #111;
+  color: #ffb703;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.newsletter-box button:hover {
+  transform: translateY(-2px);
+}
+
+#backTop {
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ffb703;
+  color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(255,183,3,.5);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s ease;
+  z-index: 9999;
+}
+
+#backTop.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-top {
+    padding: 60px 0 40px;
+  }
+
+  .footer-logo {
+    width: 160px;
+  }
+}

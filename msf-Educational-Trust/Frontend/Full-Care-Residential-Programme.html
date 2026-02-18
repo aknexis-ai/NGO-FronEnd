@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MSF | Full Care Residential Programme</title>
+
+<meta name="description" content="MSF Educational Trust is dedicated to transforming lives through education, skill development, health care, and social empowerment. Join us in creating lasting change.">
+<meta name="keywords" content="MSF Educational Trust, NGO India, Education Trust, Child Welfare, Non Profit Organization, Donate, Volunteer, Social Work, Skill Development, Community Support">
+<meta name="author" content="MSF Educational Trust">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="MSF Educational Trust | Empowering Lives Through Education">
+<meta property="og:description" content="Together we transform lives. Support education, health, and opportunity for communities in need.">
+<meta property="og:image" content="https://msf-trust.netlify.app/images/MSF-logo.png">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:site_name" content="MSF Educational Trust">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MSF Educational Trust | Empowering Lives">
+<meta name="twitter:description" content="Support education and social empowerment initiatives across communities.">
+<meta name="twitter:image" content="https://msf-trust.netlify.app/images/MSF-logo.png">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#ffb703">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-status-bar-style" content="black-translucent">
+
+<link rel="icon" href="images/MSF-logo.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/MSF-logo.png">
+
+<!--Production-Grade code-->
+<meta name="google-site-verification" content="google-site-verification=RBwOueXlnoEoQ-h30ZR7auWxHExcFoU0P1oyQdtF2_I">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/sub-hero.css">
+<link rel="stylesheet" href="css/styles-sub.css">
+<link rel="stylesheet" href="css/footer.css">
+
+<style>
+  /* ================= PROGRAMME BASE ================= */
+
+.programme-page {
+  background: #ffffff;
+  overflow-x: hidden;
+}
+
+.programme-page .container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* ================= INTRO ================= */
+
+.programme-intro {
+  padding: 110px 0 90px;
+  background: linear-gradient(135deg, #f4f7ff, #fff7ed);
+  text-align: center;
+}
+
+.programme-intro h1 {
+  font-size: clamp(34px, 4vw, 52px);
+  margin-bottom: 18px;
+  color: #0f172a;
+}
+
+.programme-intro .lead {
+  max-width: 820px;
+  margin: auto auto 16px;
+  font-size: 1.15rem;
+  color: #334155;
+  line-height: 1.7;
+}
+
+.programme-intro p {
+  max-width: 860px;
+  margin: auto;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* ================= OVERVIEW ================= */
+
+.programme-overview {
+  padding: 100px 0;
+}
+
+.overview-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.overview-content h2 {
+  font-size: clamp(28px, 3vw, 40px);
+  margin-bottom: 16px;
+}
+
+.overview-content p {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.overview-image img {
+  width: 100%;
+  border-radius: 24px;
+  box-shadow: 0 28px 55px rgba(0,0,0,0.18);
+  transform: translateY(24px);
+  transition: 0.8s ease;
+}
+
+/* ================= CENTRE SECTIONS ================= */
+
+.centre-section {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.centre-section.alt {
+  background: #f8fafc;
+}
+
+.centre-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.centre-content h3 {
+  font-size: 1.6rem;
+  margin-bottom: 6px;
+  color: #0f172a;
+}
+
+.centre-location {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: #f59e0b;
+  margin-bottom: 14px;
+}
+
+.centre-content p {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.centre-image img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 22px;
+  box-shadow: 0 24px 50px rgba(0,0,0,0.16);
+  transform: translateY(30px) scale(0.96);
+  transition: 0.9s ease;
+}
+
+/* ================= MOTION (SCROLL READY) ================= */
+
+/* add .show via JS or IntersectionObserver */
+.overview-image img.show,
+.centre-image img.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* text motion */
+.overview-content,
+.centre-content {
+  transform: translateY(26px);
+  transition: 0.8s ease;
+}
+
+.overview-content.show,
+.centre-content.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* hover micro-motion */
+.centre-image img:hover {
+  transform: scale(1.04);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .overview-grid,
+  .centre-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .centre-image,
+  .overview-image {
+    text-align: center;
+  }
+
+  .centre-image img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .programme-intro {
+    padding: 90px 0 70px;
+  }
+
+  .centre-section {
+    padding: 70px 0;
+  }
+
+  .centre-content h3 {
+    font-size: 1.4rem;
+  }
+}
+
+</style>
+
+</head>
+<body>
+  <!--Header section -->
+  <header class="msf-header">
+  <div class="header-inner">
+
+    <!-- LOGO -->
+    <div class="logo-box" onclick="location.href='index.html'">
+      <img src="images/MSF-logo.png" alt="MSF Logo">
+      <span>MSF Educational Trust</span>
+    </div>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="nav-area">
+      <ul class="nav-links">
+
+        <li class="dropdown">
+          <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="background.html">Background</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mission-vision.html">Mission & Vision</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="patrons.html">Patrons</a></li>
+            <li><a href="Annual-Reports.html">Annual Reports</a></li>
+            <li><a href="Financial-Documents.html">Financial Documents</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">What We Do<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+            <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+            <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+            <li><a href="Mental-Health.html">Mental Health</a></li>
+            <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+            <li><a href="edu-programs.html">Education & Skill Building</a></li>
+            <li><a href="Success-Stories.html">Success Stories</a></li>
+            <li><a href="Annual-Tour.html">Annual Tour</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate Online</a></li>
+            <li><a href="Volunteers-post.html">Volunteers</a></li>
+            <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+            <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Gallery<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+            <li><a href="Newsletter.html">Newsletter</a></li>
+            <li><a href="Press-Releases.html">Press Releases</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Video-Gallery.html">Video Gallery</a></li>
+          </ul>
+        </li>
+<!-- 
+        <li class="dropdown">
+          <a href="#">City Walk<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Overview</a></li>
+            <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+            <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+            <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+            <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+            <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+            <li><a href="Media-Coverage.html">Media Coverage</a></li>
+            <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+          </ul>
+        </li> -->
+
+      </ul>
+    </nav>
+
+    <!-- ACTION BUTTONS + TOGGLE -->
+    <div class="action-buttons">
+      <a href="volunteer.html" class="btn login-btn">
+        <span class="full-text">Volunteer Login</span>
+        <span class="short-text">Login</span>
+      </a>
+
+      <a href="donate.html" class="btn donate-btn">
+        <span class="rupee">₹</span>
+        <span>Donate</span>
+      </a>
+
+      <div class="menu-toggle" aria-label="Open Menu">&#9776;</div>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <nav class="mobile-menu" aria-label="Mobile Navigation">
+    <ul class="nav-links">
+
+      <li class="dropdown">
+        <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="background.html">Background</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mission-vision.html">Mission & Vision</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="patrons.html">Patrons</a></li>
+          <li><a href="Annual-Reports.html">Annual Reports</a></li>
+          <li><a href="Financial-Documents.html">Financial Documents</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">What We Do<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+          <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+          <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+          <li><a href="Mental-Health.html">Mental Health</a></li>
+          <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+          <li><a href="edu-programs.html">Education & Skill Building</a></li>
+          <li><a href="Success-Stories.html">Success Stories</a></li>
+          <li><a href="Annual-Tour.html">Annual Tour</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="donate.html">Donate Online</a></li>
+          <li><a href="Volunteers-post.html">Volunteers</a></li>
+          <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+          <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Gallery<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+          <li><a href="Newsletter.html">Newsletter</a></li>
+          <li><a href="Press-Releases.html">Press Releases</a></li>
+          <li><a href="Photo.html">Photo Gallery</a></li>
+          <li><a href="Video-Gallery.html">Video Gallery</a></li>
+        </ul>
+      </li>
+<!-- 
+      <li class="dropdown">
+        <a href="#">City Walk<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Overview</a></li>
+          <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+          <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+          <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+          <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+          <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+          <li><a href="Media-Coverage.html">Media Coverage</a></li>
+          <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+        </ul>
+      </li> -->
+
+    </ul>
+  </nav>
+
+</header>
+
+<!-- ================= SUB PAGE HERO : CONTACT ================= -->
+
+<section class="sub-hero">
+
+  <div class="sub-hero-slider">
+
+    <div class="sub-hero-slide active" style="background-image: url('images/bg_1.jpg');">
+      <div class="sub-hero-overlay"></div>
+
+      <div class="sub-hero-content">
+        <h1>
+          <div class="sub-breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="#">Residential Programme</a>
+        </div>
+
+          <span class="sub-deco"><img src="images/motive.png"></span>
+          Full Care Residential Programme
+          <span class="sub-deco"><img src="images/motive-1.png"></span>
+        </h1>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ SUB HERO WAVES ============ -->
+
+<div class="sub-hero-wave wave-back">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path
+      d="M0,60 
+         C120,100 240,20 360,50 
+         C480,80 600,30 720,50 
+         C840,70 960,40 1080,60 
+         C1200,80 1320,40 1440,50 
+         L1440,0 L0,0 Z">
+    </path>
+  </svg>
+</div>
+
+<div class="sub-hero-wave wave-front">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path
+      d="M0,60 
+         C120,100 240,20 360,50 
+         C480,80 600,30 720,50 
+         C840,70 960,40 1080,60 
+         C1200,80 1320,40 1440,50 
+         L1440,0 L0,0 Z">
+    </path>
+  </svg>
+</div>
+
+<!-- ================= FULL CARE RESIDENTIAL PROGRAMME ================= -->
+
+<main class="programme-page">
+
+  <!-- PAGE INTRO -->
+  <section class="programme-intro">
+    <div class="container">
+
+      <h1>Full Care Residential Programme</h1>
+
+      <p class="lead">
+        MSF Educational Trust operates full care residential centres and shelter homes
+        that provide a safe, nurturing, and structured environment for children in
+        need of care and protection.
+      </p>
+
+      <p>
+        Our residential programmes focus on holistic development — ensuring access to
+        education, healthcare, nutrition, emotional well-being, life skills, and
+        reintegration into society wherever possible.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- ================= PROGRAMME OVERVIEW ================= -->
+  <section class="programme-overview">
+    <div class="container overview-grid">
+
+      <div class="overview-content">
+        <h2>Programme Overview</h2>
+
+        <p>
+          The Full Care Residential Programme is designed for children who are homeless,
+          abandoned, orphaned, or at risk. These children are provided with a secure
+          living space, continuous care, and professional support systems that help
+          them rebuild their lives with dignity and hope.
+        </p>
+
+        <p>
+          Each residential centre operates in compliance with child protection laws
+          and is staffed by trained caregivers, educators, counselors, and healthcare
+          professionals.
+        </p>
+      </div>
+
+      <div class="overview-image">
+        <img src="images/image_1.jpg" alt="Full Care Residential Programme">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CENTRE LIST ================= -->
+
+  <!-- Aasra CHB -->
+  <section class="centre-section">
+    <div class="container centre-grid">
+
+      <div class="centre-content">
+        <h3>Aasra Children Home for Boys (CHB)</h3>
+        <span class="centre-location">Najafgarh</span>
+
+        <p>
+          Aasra Children Home for Boys provides long-term residential care for boys who
+          have faced neglect, abuse, or homelessness. The centre focuses on education,
+          discipline, emotional healing, and character development.
+        </p>
+
+        <p>
+          Boys are supported through formal schooling, vocational training, counseling,
+          and recreational activities that encourage confidence and independence.
+        </p>
+      </div>
+
+      <div class="centre-image">
+        <img src="images/image_2.jpg" alt="Aasra Children Home for Boys">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DMRC CHB -->
+  <section class="centre-section alt">
+    <div class="container centre-grid">
+
+      <div class="centre-image">
+        <img src="images/image_3.jpg" alt="DMRC Children Home for Boys">
+      </div>
+
+      <div class="centre-content">
+        <h3>DMRC Children Home for Boys (CHB)</h3>
+        <span class="centre-location">Tis Hazari</span>
+
+        <p>
+          The DMRC Children Home for Boys serves children rescued from vulnerable
+          situations, offering immediate care and long-term rehabilitation services.
+        </p>
+
+        <p>
+          The centre ensures access to education, healthcare, nutrition, and structured
+          daily routines that promote stability and growth.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Aarushi CHG -->
+  <section class="centre-section">
+    <div class="container centre-grid">
+
+      <div class="centre-content">
+        <h3>Aarushi Children Home for Girls (CHG)</h3>
+        <span class="centre-location">Gurugram</span>
+
+        <p>
+          Aarushi Children Home for Girls provides a safe and empowering space for girls
+          in need of care and protection. The centre emphasizes education, health,
+          self-esteem, and life skills.
+        </p>
+
+        <p>
+          Special attention is given to emotional well-being, counseling, and preparing
+          girls for independent and confident futures.
+        </p>
+      </div>
+
+      <div class="centre-image">
+        <img src="images/image_4.jpg" alt="Aarushi Children Home for Girls">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DMRC Udaan CHG -->
+  <section class="centre-section alt">
+    <div class="container centre-grid">
+
+      <div class="centre-image">
+        <img src="images/image_5.jpg" alt="DMRC Udaan Children Home for Girls">
+      </div>
+
+      <div class="centre-content">
+        <h3>DMRC Udaan Children Home for Girls (CHG)</h3>
+        <span class="centre-location">Dilshad Garden</span>
+
+        <p>
+          DMRC Udaan Children Home for Girls supports girls who have experienced difficult
+          life circumstances. The programme focuses on healing, education, and personal
+          growth.
+        </p>
+
+        <p>
+          Through structured routines and compassionate care, the centre helps girls
+          rebuild confidence and pursue their aspirations.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Apna Ghar OS -->
+  <section class="centre-section">
+    <div class="container centre-grid">
+
+      <div class="centre-content">
+        <h3>Apna Ghar Open Shelter (OS)</h3>
+        <span class="centre-location">Old Delhi Railway Station</span>
+
+        <p>
+          Apna Ghar Open Shelter provides immediate, short-term care and protection for
+          children found in vulnerable conditions around the Old Delhi Railway Station.
+        </p>
+
+        <p>
+          The shelter acts as a first point of contact, offering food, rest, medical
+          assistance, counseling, and referral services.
+        </p>
+      </div>
+
+      <div class="centre-image">
+        <img src="images/image_6.jpg" alt="Apna Ghar Open Shelter">
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ODRS OS -->
+  <section class="centre-section alt">
+    <div class="container centre-grid">
+
+      <div class="centre-image">
+        <img src="images/image_1.jpg" alt="ODRS Open Shelter">
+      </div>
+
+      <div class="centre-content">
+        <h3>ODRS Open Shelter (OS)</h3>
+        <span class="centre-location">Old Delhi Railway Station</span>
+
+        <p>
+          The ODRS Open Shelter focuses on outreach, protection, and rehabilitation of
+          children found in and around railway premises.
+        </p>
+
+        <p>
+          The programme ensures immediate safety, counseling, and coordination with
+          child welfare authorities for long-term care solutions.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<!--Footer Section -->
+<footer class="ngo-footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND + SOCIAL -->
+    <div class="footer-brand">
+      <img src="images/MSF-logo.png" class="footer-logo" alt="MSF Educational Trust">
+
+        <p>
+          <b>MSF Educational Trust</b> is dedicated to empowering underprivileged children and communities
+          through education, care, and life-building opportunities. Together, we build hope, dignity,
+          and a brighter future.
+        </p>
+
+      <div class="footer-social">
+        <a href="www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="x.com"><i class="fab fa-x-twitter"></i></a>
+        <a href="www.youtube.com/"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- WHO WE ARE -->
+    <div class="footer-col">
+      <h4>Who We Are</h4>
+      <ul>
+        <li><a href="mission-vision.html">Mission & Vision</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="Financial-Documents.html">Financial Documents</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+      </ul>
+
+      <h4 class="mt">How to Empower Us</h4>
+      <ul>
+        <li><a href="donate.html">Donate Online</a></li>
+        <li><a href="volunteer.html">Volunteers</a></li>
+        <li><a href="patrons.html">Patrons</a></li>
+        <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+      </ul>
+    </div>
+
+    <!-- WHAT WE DO -->
+    <div class="footer-col">
+      <h4>What We Do</h4>
+      <ul>
+        <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+        <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+        <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+        <li><a href="edu-programs.html">Education & Skill Building</a></li>
+        <li><a href="Performing-Arts.html">Performing Arts</a></li>
+        <li><a href="Success-Stories.html">Success Stories</a></li>
+        <li><a href="Annual-Tour.html">Annual Tour</a></li>
+      </ul>
+    </div>
+
+    <!-- CITY WALK + GALLERY -->
+    <div class="footer-col">
+      <h4>City Walk</h4>
+      <ul>
+        <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+        <li><a href="Media-Coverage.html">Media Coverage</a></li>
+        <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+        <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+        <li><a href="Exploring-Shahjahanabad.html">Exploring Walled City <!-- <span class="new-tag">NEW</span></a></li> -->
+      </ul>
+
+      <h4 class="mt">Gallery</h4>
+      <ul>
+        <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+        <li><a href="Newsletter.html">Newsletter</a></li>
+        <li><a href="Press-Releases.html">Press Release</a></li>
+        <li><a href="blogs.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT + MAP -->
+    <div class="footer-col footer-contact">
+      <h4>Contact Us</h4>
+
+      <p>
+        📍 2nd Floor, DDA Community Centre,<br>
+        Chandi Wali Gali, Paharganj,<br>
+        New Delhi - 110055
+      </p>
+
+      <p>
+        ✉ contact@msftrust.org<br>
+        tanya@msftrust.org
+      </p>
+
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps?q=Paharganj%20New%20Delhi&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DONATION STRIP -->
+  <div class="footer-donations">
+    <span>Donation Gateway Options:</span>
+    <img src="images/rupey.svg" alt="Payment Methods">
+    <img src="images/visa.svg" alt="Payment Methods">
+    <img src="images/mastercard.svg" alt="Payment Methods">
+    <img src="images/upi.svg" alt="Payment Methods">
+    <img src="images/gpay.svg" alt="Payment Methods">
+    <img src="images/paytm.svg" alt="Payment Methods">
+    <img src="images/phonpay.svg" alt="Payment Methods">
+    <img src="images/sbi.svg" alt="Payment Methods">
+    <img src="images/hdfc.svg" alt="Payment Methods">
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>Privacy Policy | Terms and Conditions</p>
+    <p>© 2026 MSF Educational Trust. All Rights Reserved.</p>
+  </div>
+
+</footer>
+
+<div id="backTop">↑</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/sub-page.js"></script>
+<script src="js/footer.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,386 @@
+.impact-section {
+  position: relative;
+  padding: 110px 24px;
+  background: linear-gradient(180deg, #ffffff 0%, #f7f7f7 100%);
+  overflow: hidden;
+}
+
+.impact-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,183,3,0.15), transparent 40%),
+    radial-gradient(circle at 80% 80%, rgba(0,0,0,0.05), transparent 40%);
+  z-index: 0;
+}
+
+.impact-container {
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+  z-index: 1;
+}
+
+.impact-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.impact-header h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 800;
+  color: #111;
+}
+
+.impact-header p {
+  margin-top: 12px;
+  font-size: 18px;
+  color: #555;
+}
+
+/* Grid layout */
+.impact-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+}
+
+.impact-card {
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(10px);
+  border-radius: 18px;
+  padding: 38px 28px;
+  text-align: center;
+  box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+  transition: all .35s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Soft glow effect */
+.impact-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 40%, rgba(255,183,3,0.15));
+  opacity: 0;
+  transition: .35s ease;
+}
+
+.impact-card:hover::before {
+  opacity: 1;
+}
+
+.impact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.12);
+}
+
+.impact-card h3 {
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--accent-gold);
+}
+
+.impact-card p {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #444;
+}
+
+/* Impact Icon Styling */
+
+.impact-icon {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  border-radius: 50%;
+  background: rgba(255,183,3,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  color: var(--accent-gold);
+  box-shadow: 0 8px 25px rgba(255,183,3,0.25);
+  transition: 0.3s ease;
+}
+
+.impact-card:hover .impact-icon {
+  transform: scale(1.08) rotate(4deg);
+  box-shadow: 0 12px 35px rgba(255,183,3,0.4);
+}
+
+
+/* Responsive */
+@media (max-width: 900px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  .impact-card {
+    padding: 22px;
+    border-radius: 16px;
+  }
+
+  .impact-card h3 {
+    font-size: 20px;
+  }
+
+  .impact-card p {
+    font-size: 14px;
+  }
+
+  .impact-icon {
+    width: 48px;
+    height: 48px;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .impact-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .impact-card {
+    padding: 16px 14px;
+    border-radius: 14px;
+  }
+
+  .impact-card h3 {
+    font-size: 16px;
+    line-height: 1.2;
+  }
+
+  .impact-card p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .impact-icon {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+  }
+}
+
+/* =============================
+   CTA BLOCK SECTION
+============================= */
+
+.cta-block{
+  padding: 110px 0;
+  background: #ffffff;
+}
+
+.cta-grid{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 80px;
+  align-items: start;
+}
+
+/* =============================
+   INDIVIDUAL ITEM
+============================= */
+
+.cta-item{
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  animation: ctaReveal 0.9s ease both;
+}
+
+.cta-item:nth-child(2){ animation-delay: .15s; }
+.cta-item:nth-child(3){ animation-delay: .3s; }
+
+/* =============================
+   ICON STYLE
+============================= */
+
+.cta-icon{
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  color: #ff7a18;
+  transition: .4s ease;
+}
+
+.cta-icon svg{
+  width: 100%;
+  height: 100%;
+  stroke: currentColor;
+}
+
+/* =============================
+   TEXT
+============================= */
+
+.cta-content h3{
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #111;
+}
+
+.cta-content p{
+  font-size: 16px;
+  line-height: 1.7;
+  color: #888;
+  max-width: 300px;
+}
+
+/* =============================
+   HOVER EFFECT
+============================= */
+
+.cta-item:hover .cta-icon{
+  transform: translateY(-6px) scale(1.1);
+  color: #ff9f1c;
+}
+
+/* =============================
+   RESPONSIVE
+============================= */
+
+@media (max-width: 900px){
+  .cta-grid{
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .cta-item{
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cta-content p{
+    max-width: 90%;
+  }
+}
+
+/* =============================
+   ANIMATION
+============================= */
+
+@keyframes ctaReveal{
+  from{
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.cta-svg{
+  width: 42px;
+  height: 42px;
+  stroke: #ff7a18;
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: .5s ease;
+}
+
+/* Floating icon animation */
+.cta-item:hover .cta-svg{
+  transform: translateY(-6px) scale(1.1);
+  stroke: #ff9f1c;
+}
+
+/* Subtle content lift */
+.cta-item:hover h3{
+  transform: translateX(4px);
+}
+
+.cta-item:hover p{
+  opacity: .9;
+}
+
+/* Entrance animation */
+.cta-item{
+  animation: ctaFade 1s ease both;
+}
+
+@keyframes ctaFade{
+  from{
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ICON BASE */
+
+.icon{
+  align-items: center;
+  justify-content: center;
+}
+
+.icon span{
+  font-size: 46px;
+  color: #ff7a18;
+  display: inline-block;
+  transition: .5s ease;
+}
+
+/* HOVER MICRO-ANIMATIONS */
+
+.cta-item{
+  transition: .6s cubic-bezier(.2,.8,.2,1);
+}
+
+.cta-item:hover{
+  transform: translateY(-8px);
+}
+
+.cta-item:hover .icon span{
+  color: #ff9f1c;
+  transform: translateY(-6px) scale(1.1) rotate(3deg);
+}
+
+/* TEXT EFFECTS */
+
+.cta-item h3{
+  transition: .4s ease;
+}
+
+.cta-item p{
+  transition: .4s ease;
+  opacity: .7;
+}
+
+.cta-item:hover h3{
+  transform: translateX(6px);
+}
+
+.cta-item:hover p{
+  opacity: 1;
+}
+
+/* REVEAL ANIMATION */
+
+.cta-item{
+  animation: ctaReveal 1s ease both;
+}
+
+@keyframes ctaReveal{
+  from{
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

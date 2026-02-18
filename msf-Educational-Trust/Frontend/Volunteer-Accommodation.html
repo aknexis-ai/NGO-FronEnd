@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>MSF | Accommodation </title>
+
+<meta name="description" content="MSF Educational Trust is dedicated to transforming lives through education, skill development, health care, and social empowerment. Join us in creating lasting change.">
+<meta name="keywords" content="MSF Educational Trust, NGO India, Education Trust, Child Welfare, Non Profit Organization, Donate, Volunteer, Social Work, Skill Development, Community Support">
+<meta name="author" content="MSF Educational Trust">
+<meta name="robots" content="index, follow">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="MSF Educational Trust | Empowering Lives Through Education">
+<meta property="og:description" content="Together we transform lives. Support education, health, and opportunity for communities in need.">
+<meta property="og:image" content="https://msf-trust.netlify.app/images/MSF-logo.png">
+<meta property="og:url" content="https://yourdomain.com">
+<meta property="og:site_name" content="MSF Educational Trust">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MSF Educational Trust | Empowering Lives">
+<meta name="twitter:description" content="Support education and social empowerment initiatives across communities.">
+<meta name="twitter:image" content="https://msf-trust.netlify.app/images/MSF-logo.png">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="theme-color" content="#ffb703">
+<meta name="format-detection" content="telephone=no">
+
+<link rel="manifest" href="/manifest.json">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-status-bar-style" content="black-translucent">
+
+<link rel="icon" href="images/MSF-logo.png" type="image/x-icon">
+<link rel="apple-touch-icon" href="images/MSF-logo.png">
+
+<!--Production-Grade code-->
+<meta name="google-site-verification" content="google-site-verification=RBwOueXlnoEoQ-h30ZR7auWxHExcFoU0P1oyQdtF2_I">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="css/fonts.css">
+<link rel="stylesheet" href="css/theme.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/header.css">
+<link rel="stylesheet" href="css/sub-hero.css">
+<link rel="stylesheet" href="css/styles-sub.css">
+<link rel="stylesheet" href="css/footer.css">
+
+<style>
+  /* =====================================================
+   BASE
+===================================================== */
+
+.accommodation-intro,
+.accommodation-overview,
+.accommodation-facilities,
+.accommodation-guidelines,
+.accommodation-locations,
+.accommodation-support {
+  padding: 90px 0;
+  background: #ffffff;
+}
+
+.accommodation-intro {
+  background: linear-gradient(135deg, #f4f7ff, #fff7ed);
+  text-align: center;
+}
+
+.accommodation-intro h2 {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+.accommodation-intro .lead {
+  max-width: 820px;
+  margin: auto auto 14px;
+  font-size: 1.1rem;
+  color: #334155;
+}
+
+.accommodation-intro p {
+  max-width: 860px;
+  margin: auto;
+  color: #475569;
+  line-height: 1.7;
+}
+
+/* =====================================================
+   SPLIT LAYOUT (CONTENT + IMAGE)
+===================================================== */
+
+.accommodation-overview .split-layout,
+.accommodation-guidelines .split-layout {
+  align-items: center;
+}
+
+.content-block h3 {
+  font-size: clamp(24px, 3vw, 34px);
+  margin-bottom: 10px;
+  color: #0f172a;
+}
+
+.content-block p {
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+/* Image */
+.image-block img {
+  width: 100%;
+  max-width: 420px;
+  border-radius: 22px;
+  box-shadow: 0 22px 45px rgba(0,0,0,0.16);
+  opacity:1;
+  transform: translateY(24px) scale(0.97);
+  transition: 0.9s ease;
+}
+
+/* =====================================================
+   FACILITIES GRID
+===================================================== */
+
+.accommodation-facilities {
+  background: #f8fafc;
+}
+
+.accommodation-facilities h3 {
+  text-align: center;
+  font-size: clamp(26px, 3vw, 40px);
+  margin-bottom: 44px;
+}
+
+.facilities-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+}
+
+.facility-item {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 26px 24px;
+  box-shadow: 0 18px 40px rgba(0,0,0,0.1);
+  transition: 0.4s ease;
+  opacity: 1;
+  transform: translateY(22px);
+}
+
+.facility-item h4 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: #4f46e5;
+}
+
+.facility-item p {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.facility-item:hover {
+  transform: translateY(-6px);
+}
+
+/* =====================================================
+   GUIDELINES SECTION
+===================================================== */
+
+.accommodation-guidelines {
+  background: linear-gradient(135deg, #eef2ff, #ffffff);
+}
+
+/* =====================================================
+   LOCATION LIST
+===================================================== */
+
+.accommodation-locations {
+  background: #ffffff;
+  text-align: center;
+}
+
+.accommodation-locations h3 {
+  font-size: clamp(26px, 3vw, 40px);
+  margin-bottom: 14px;
+}
+
+.accommodation-locations p {
+  max-width: 760px;
+  margin: auto auto 24px;
+  color: #475569;
+  line-height: 1.7;
+}
+
+.location-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.location-list li {
+  display: inline-block;
+  margin: 8px 14px;
+  padding: 8px 20px;
+  border-radius: 40px;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* =====================================================
+   SUPPORT CTA
+===================================================== */
+
+.accommodation-support {
+  background: linear-gradient(135deg, #4f46e5, #6366f1);
+  color: #ffffff;
+  text-align: center;
+}
+
+.accommodation-support h3 {
+  font-size: clamp(26px, 3vw, 40px);
+  margin-bottom: 14px;
+}
+
+.accommodation-support p {
+  max-width: 760px;
+  margin: auto auto 26px;
+  line-height: 1.7;
+  opacity: 0.95;
+}
+
+.accommodation-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 30px;
+  border-radius: 40px;
+  background: #ffffff;
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.4s ease;
+}
+
+.accommodation-cta::after {
+  content: "→";
+  transition: transform 0.3s ease;
+}
+
+.accommodation-cta:hover {
+  transform: translateY(-3px);
+}
+
+.accommodation-cta:hover::after {
+  transform: translateX(6px);
+}
+
+/* =====================================================
+   CALM SCROLL MOTION (READY)
+===================================================== */
+
+.content-block,
+.image-block,
+.facility-item {
+  opacity: 1;
+  transform: translateY(22px);
+  transition: 0.8s ease;
+}
+
+.content-block.show,
+.image-block.show,
+.facility-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.image-block img.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+
+@media (max-width: 1000px) {
+  .facilities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 900px) {
+  .split-layout,
+  .split-layout.reverse {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .image-block {
+    text-align: center;
+  }
+
+  .image-block img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+
+  .accommodation-intro,
+  .accommodation-overview,
+  .accommodation-facilities,
+  .accommodation-guidelines,
+  .accommodation-locations,
+  .accommodation-support {
+    padding: 70px 0;
+  }
+
+  .facilities-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+</style>
+
+</head>
+<body>
+  <!--Header section -->
+  <header class="msf-header">
+  <div class="header-inner">
+
+    <!-- LOGO -->
+    <div class="logo-box" onclick="location.href='index.html'">
+      <img src="images/MSF-logo.png" alt="MSF Logo">
+      <span>MSF Educational Trust</span>
+    </div>
+
+    <!-- DESKTOP NAVIGATION -->
+    <nav class="nav-area">
+      <ul class="nav-links">
+
+        <li class="dropdown">
+          <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="background.html">Background</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="mission-vision.html">Mission & Vision</a></li>
+            <li><a href="team.html">Our Team</a></li>
+            <li><a href="patrons.html">Patrons</a></li>
+            <li><a href="Annual-Reports.html">Annual Reports</a></li>
+            <li><a href="Financial-Documents.html">Financial Documents</a></li>
+            <li><a href="contactUs.html">Contact Us</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">What We Do<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+            <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+            <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+            <li><a href="Mental-Health.html">Mental Health</a></li>
+            <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+            <li><a href="edu-programs.html">Education & Skill Building</a></li>
+            <li><a href="Success-Stories.html">Success Stories</a></li>
+            <li><a href="Annual-Tour.html">Annual Tour</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="donate.html">Donate Online</a></li>
+            <li><a href="Volunteers-post.html">Volunteers</a></li>
+            <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+            <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+          </ul>
+        </li>
+
+        <li class="dropdown">
+          <a href="#">Gallery<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+            <li><a href="Newsletter.html">Newsletter</a></li>
+            <li><a href="Press-Releases.html">Press Releases</a></li>
+            <li><a href="Photo.html">Photo Gallery</a></li>
+            <li><a href="Video-Gallery.html">Video Gallery</a></li>
+          </ul>
+        </li>
+<!-- 
+        <li class="dropdown">
+          <a href="#">City Walk<span class="arrow"> ▾</span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Overview</a></li>
+            <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+            <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+            <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+            <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+            <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+            <li><a href="Media-Coverage.html">Media Coverage</a></li>
+            <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+          </ul>
+        </li> -->
+
+      </ul>
+    </nav>
+
+    <!-- ACTION BUTTONS + TOGGLE -->
+    <div class="action-buttons">
+      <a href="volunteer.html" class="btn login-btn">
+        <span class="full-text">Volunteer Login</span>
+        <span class="short-text">Login</span>
+      </a>
+
+      <a href="donate.html" class="btn donate-btn">
+        <span class="rupee">₹</span>
+        <span>Donate</span>
+      </a>
+
+      <div class="menu-toggle" aria-label="Open Menu">&#9776;</div>
+    </div>
+
+  </div>
+
+  <!-- MOBILE MENU -->
+  <nav class="mobile-menu" aria-label="Mobile Navigation">
+    <ul class="nav-links">
+
+      <li class="dropdown">
+        <a href="#">Who We Are<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="background.html">Background</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="mission-vision.html">Mission & Vision</a></li>
+          <li><a href="team.html">Our Team</a></li>
+          <li><a href="patrons.html">Patrons</a></li>
+          <li><a href="Annual-Reports.html">Annual Reports</a></li>
+          <li><a href="Financial-Documents.html">Financial Documents</a></li>
+          <li><a href="contactUs.html">Contact Us</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">What We Do<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+          <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+          <li><a href="Help-Desk.html">24×7 Child Help Desk</a></li>
+          <li><a href="Mental-Health.html">Mental Health</a></li>
+          <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+          <li><a href="edu-programs.html">Education & Skill Building</a></li>
+          <li><a href="Success-Stories.html">Success Stories</a></li>
+          <li><a href="Annual-Tour.html">Annual Tour</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">How To Empower Us<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="donate.html">Donate Online</a></li>
+          <li><a href="Volunteers-post.html">Volunteers</a></li>
+          <li><a href="Volunteer-Accommodation.html">Volunteer Accommodation</a></li>
+          <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Gallery<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+          <li><a href="Newsletter.html">Newsletter</a></li>
+          <li><a href="Press-Releases.html">Press Releases</a></li>
+          <li><a href="Photo.html">Photo Gallery</a></li>
+          <li><a href="Video-Gallery.html">Video Gallery</a></li>
+        </ul>
+      </li>
+<!-- 
+      <li class="dropdown">
+        <a href="#">City Walk<span class="arrow"> ▾</span></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Overview</a></li>
+          <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+          <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+          <li><a href="Book-a-Food-Walk.html">Book a Food Walk</a></li>
+          <li><a href="Mehrauli-Heritage-Walk.html">Mehrauli Heritage Walk</a></li>
+          <li><a href="Exploring-Shahjahanabad.html">Exploring Shahjahanabad</a></li>
+          <li><a href="Media-Coverage.html">Media Coverage</a></li>
+          <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+        </ul>
+      </li> -->
+
+    </ul>
+  </nav>
+
+</header>
+
+<!-- ================= SUB PAGE HERO : CONTACT ================= -->
+
+<section class="sub-hero">
+
+  <div class="sub-hero-slider">
+
+    <div class="sub-hero-slide active" style="background-image: url('images/bg_1.jpg');">
+      <div class="sub-hero-overlay"></div>
+
+      <div class="sub-hero-content">
+        <h1>
+          <div class="sub-breadcrumb">
+          <a href="index.html">Home</a>
+          <span>›</span>
+          <a href="#">Background</a>
+        </div>
+
+          <span class="sub-deco"><img src="images/motive.png"></span>
+          Accommodation for SBT Volunteers in Delhi NCR
+          <span class="sub-deco"><img src="images/motive-1.png"></span>
+        </h1>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+
+<!-- ============ SUB HERO WAVES ============ -->
+
+<div class="sub-hero-wave wave-back">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path
+      d="M0,60 
+         C120,100 240,20 360,50 
+         C480,80 600,30 720,50 
+         C840,70 960,40 1080,60 
+         C1200,80 1320,40 1440,50 
+         L1440,0 L0,0 Z">
+    </path>
+  </svg>
+</div>
+
+<div class="sub-hero-wave wave-front">
+  <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+    <path
+      d="M0,60 
+         C120,100 240,20 360,50 
+         C480,80 600,30 720,50 
+         C840,70 960,40 1080,60 
+         C1200,80 1320,40 1440,50 
+         L1440,0 L0,0 Z">
+    </path>
+  </svg>
+</div>
+
+<!-- ================= SBT VOLUNTEER ACCOMMODATION ================= -->
+
+<section class="accommodation-intro">
+  <div class="container">
+
+    <h2>Accommodation for SBT Volunteers</h2>
+
+    <p class="lead">
+      MSF Educational Trust facilitates safe, affordable, and comfortable
+      accommodation for SBT (Short-Based Training) Volunteers working
+      across Delhi NCR.
+    </p>
+
+    <p>
+      We understand that a secure living environment is essential for
+      volunteers to focus fully on their service and learning experience.
+      Our accommodation arrangements are designed to ensure comfort,
+      safety, and accessibility.
+    </p>
+
+  </div>
+</section>
+
+<!-- ================= ACCOMMODATION OVERVIEW ================= -->
+
+<section class="accommodation-overview">
+  <div class="container split-layout">
+
+    <div class="content-block">
+      <h3>Safe & Supportive Living Spaces</h3>
+
+      <p>
+        Accommodation for SBT volunteers is arranged in trusted residential
+        facilities located near programme centres and public transport
+        routes within Delhi NCR.
+      </p>
+
+      <p>
+        These spaces promote a community living experience where volunteers
+        from diverse backgrounds can interact, share experiences, and
+        support one another.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= FACILITIES PROVIDED ================= -->
+
+<section class="accommodation-facilities">
+  <div class="container">
+
+    <h3>Facilities Provided</h3>
+
+    <div class="facilities-grid">
+
+      <div class="facility-item">
+        <h4>Secure Stay</h4>
+        <p>
+          Safe residential environments with basic security measures
+          and responsible supervision.
+        </p>
+      </div>
+
+      <div class="facility-item">
+        <h4>Clean & Comfortable Rooms</h4>
+        <p>
+          Shared or individual accommodation options with clean
+          sleeping arrangements and basic furniture.
+        </p>
+      </div>
+
+      <div class="facility-item">
+        <h4>Essential Amenities</h4>
+        <p>
+          Access to electricity, water supply, washrooms,
+          and common living areas.
+        </p>
+      </div>
+
+      <div class="facility-item">
+        <h4>Connectivity</h4>
+        <p>
+          Locations with easy access to public transport
+          and nearby essential services.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= ELIGIBILITY & GUIDELINES ================= -->
+
+<section class="accommodation-guidelines">
+  <div class="container split-layout reverse">
+
+    <div class="content-block">
+      <h3>Eligibility & Guidelines</h3>
+
+      <p>
+        Accommodation support is available for SBT volunteers who are
+        engaged in full-time volunteering assignments with MSF
+        Educational Trust in Delhi NCR.
+      </p>
+
+      <p>
+        Volunteers are expected to follow basic house rules,
+        respect shared spaces, and maintain discipline to ensure
+        a harmonious living environment for all residents.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= LOCATION COVERAGE ================= -->
+
+<section class="accommodation-locations">
+  <div class="container">
+
+    <h3>Location Coverage</h3>
+
+    <p>
+      Accommodation facilities are currently available across
+      key locations in Delhi NCR, depending on programme needs
+      and volunteer deployment.
+    </p>
+
+    <ul class="location-list">
+      <li>Central & South Delhi</li>
+      <li>North & West Delhi</li>
+      <li>Noida & Greater Noida</li>
+      <li>Gurugram</li>
+      <li>Ghaziabad</li>
+    </ul>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT & SUPPORT ================= -->
+
+<section class="accommodation-support">
+  <div class="container">
+
+    <h3>Accommodation Support & Assistance</h3>
+
+    <p>
+      Our coordination team assists volunteers with accommodation
+      details during onboarding. For specific queries related to
+      availability, facilities, or duration of stay, volunteers
+      are encouraged to connect with the programme coordinator.
+    </p>
+
+    <a href="contact.html" class="accommodation-cta">
+      Contact Volunteer Support →
+    </a>
+
+  </div>
+</section>
+
+
+<!--Footer Section -->
+<footer class="ngo-footer">
+
+  <div class="footer-container">
+
+    <!-- BRAND + SOCIAL -->
+    <div class="footer-brand">
+      <img src="images/MSF-logo.png" class="footer-logo" alt="MSF Educational Trust">
+
+        <p>
+          <b>MSF Educational Trust</b> is dedicated to empowering underprivileged children and communities
+          through education, care, and life-building opportunities. Together, we build hope, dignity,
+          and a brighter future.
+        </p>
+
+      <div class="footer-social">
+        <a href="www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="www.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+        <a href="www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="x.com"><i class="fab fa-x-twitter"></i></a>
+        <a href="www.youtube.com/"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+
+    <!-- WHO WE ARE -->
+    <div class="footer-col">
+      <h4>Who We Are</h4>
+      <ul>
+        <li><a href="mission-vision.html">Mission & Vision</a></li>
+        <li><a href="team.html">Our Team</a></li>
+        <li><a href="Financial-Documents.html">Financial Documents</a></li>
+        <li><a href="contactUs.html">Contact Us</a></li>
+      </ul>
+
+      <h4 class="mt">How to Empower Us</h4>
+      <ul>
+        <li><a href="donate.html">Donate Online</a></li>
+        <li><a href="volunteer.html">Volunteers</a></li>
+        <li><a href="patrons.html">Patrons</a></li>
+        <li><a href="Fundraising-Events.html">Fundraising Events</a></li>
+      </ul>
+    </div>
+
+    <!-- WHAT WE DO -->
+    <div class="footer-col">
+      <h4>What We Do</h4>
+      <ul>
+        <li><a href="Full-Care-Residential-Programme.html">Full Care Residential Programme</a></li>
+        <li><a href="Outreach-Community-Projects.html">Outreach & Community Projects</a></li>
+        <li><a href="Health-Nutrition.html">Preventive Health & Nutrition</a></li>
+        <li><a href="edu-programs.html">Education & Skill Building</a></li>
+        <li><a href="Performing-Arts.html">Performing Arts</a></li>
+        <li><a href="Success-Stories.html">Success Stories</a></li>
+        <li><a href="Annual-Tour.html">Annual Tour</a></li>
+      </ul>
+    </div>
+
+    <!-- CITY WALK + GALLERY -->
+    <div class="footer-col">
+      <h4>City Walk</h4>
+      <ul>
+        <li><a href="City-Walk-Team.html">City Walk Team</a></li>
+        <li><a href="Media-Coverage.html">Media Coverage</a></li>
+        <li><a href="Book-a-City-Walk.html">Book a City Walk</a></li>
+        <li><a href="Old-Delhi-Walk.html">Old Delhi Walk</a></li>
+        <li><a href="Exploring-Shahjahanabad.html">Exploring Walled City <!-- <span class="new-tag">NEW</span></a></li> -->
+      </ul>
+
+      <h4 class="mt">Gallery</h4>
+      <ul>
+        <li><a href="Awards-Recognition.html">Awards & Recognition</a></li>
+        <li><a href="Newsletter.html">Newsletter</a></li>
+        <li><a href="Press-Releases.html">Press Release</a></li>
+        <li><a href="blogs.html">Blog</a></li>
+      </ul>
+    </div>
+
+    <!-- CONTACT + MAP -->
+    <div class="footer-col footer-contact">
+      <h4>Contact Us</h4>
+
+      <p>
+        📍 2nd Floor, DDA Community Centre,<br>
+        Chandi Wali Gali, Paharganj,<br>
+        New Delhi - 110055
+      </p>
+
+      <p>
+        ✉ contact@msftrust.org<br>
+        tanya@msftrust.org
+      </p>
+
+      <div class="footer-map">
+        <iframe
+          src="https://www.google.com/maps?q=Paharganj%20New%20Delhi&output=embed"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- DONATION STRIP -->
+  <div class="footer-donations">
+    <span>Donation Gateway Options:</span>
+    <img src="images/rupey.svg" alt="Payment Methods">
+    <img src="images/visa.svg" alt="Payment Methods">
+    <img src="images/mastercard.svg" alt="Payment Methods">
+    <img src="images/upi.svg" alt="Payment Methods">
+    <img src="images/gpay.svg" alt="Payment Methods">
+    <img src="images/paytm.svg" alt="Payment Methods">
+    <img src="images/phonpay.svg" alt="Payment Methods">
+    <img src="images/sbi.svg" alt="Payment Methods">
+    <img src="images/hdfc.svg" alt="Payment Methods">
+  </div>
+
+  <!-- BOTTOM BAR -->
+  <div class="footer-bottom">
+    <p>Privacy Policy | Terms and Conditions</p>
+    <p>© 2026 MSF Educational Trust. All Rights Reserved.</p>
+  </div>
+
+</footer>
+
+<div id="backTop">↑</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="js/nav.js"></script>
+<script src="js/hero.js"></script>
+<script src="js/sub-page.js"></script>
+<script src="js/footer.js"></script>
+
+</body>
+</html>
